@@ -14,24 +14,23 @@ public class MainActivity extends AppCompatActivity {
     private LeftDrawerFragment leftDrawerFragment;
     private DataDetailsFragment dataDetailsFragment;
     private NewsFragment newsFragment;
-//    private FAQFragment faqFragment;
+    private FAQFragment faqFragment;
     private LoginFragment loginFragment;
-//    private AccountFragment accountFragment;
+    private AccountFragment accountFragment;
     private SettingFragment settingFragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        this.homeFragment = HomeFragment.newInstance("COVID Stats");
-//        this.dataDetailsFragment = LeftDrawerFragment.newInstance("COVID Stats");
-//        this.newsFragment = LeftDrawerFragment.newInstance("COVID Stats");
-//        this.faqFragment = LeftDrawerFragment.newInstance("COVID Stats");
-//        this.loginFragment = LeftDrawerFragment.newInstance("COVID Stats");
-//        this.accountFragment = LeftDrawerFragment.newInstance("COVID Stats");
-//        this.settingFragment = LeftDrawerFragment.newInstance("COVID Stats");
+        this.homeFragment = HomeFragment.newInstance("COVID Stats");
+        this.dataDetailsFragment = DataDetailsFragment.newInstance("COVID Stats");
+        this.newsFragment = NewsFragment.newInstance("COVID Stats");
+        this.faqFragment = FAQFragment.newInstance("COVID Stats");
+        this.loginFragment = LoginFragment.newInstance("COVID Stats");
+        this.accountFragment = AccountFragment.newInstance("COVID Stats");
+        this.settingFragment = SettingFragment.newInstance("COVID Stats");
     }
 
 //    @Override
