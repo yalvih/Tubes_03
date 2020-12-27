@@ -11,7 +11,7 @@ import android.os.Bundle;
 
 import com.example.tubes_03.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentListener {
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FragmentManager fragmentManager;
@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        changePage(3);
+        changePage(1);
     }
 
-//    @Override
+    @Override
     public void changePage(int page) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         switch (page) {
@@ -76,5 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.fragment_container, this.settingFragment).addToBackStack(null);
                 break;
         }
+        ft.commit();
     }
 }
