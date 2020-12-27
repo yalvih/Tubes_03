@@ -23,6 +23,7 @@ public class AccountFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        PLACEHOLDER (account_fragment does not exist yet!)
         View view = inflater.inflate(R.layout.login_fragment, container, false);
 
         return view;
