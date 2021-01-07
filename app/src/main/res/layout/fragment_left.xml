@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/white"
         >
 
         <LinearLayout
@@ -32,7 +33,6 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
                 android:text="Home"
                 />
 
@@ -59,7 +59,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="Data"
                 />
 
@@ -86,7 +86,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="Berita"
                 />
 
@@ -113,7 +113,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="FAQ"
                 />
 
@@ -145,7 +145,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="Login"
                 />
 
@@ -171,7 +171,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="Settings"
                 />
 
@@ -197,7 +197,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:background="?attr/rippleEffectTheme"
+
                 android:text="Exit"
                 />
 
@@ -206,3 +206,6 @@
     </LinearLayout>
 
 </FrameLayout>
+
+<!--UNUSUED ASSET-->
+<!--android:background="?attrs/rippleEffectTheme"-->

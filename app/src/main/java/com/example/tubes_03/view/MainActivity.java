@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         setContentView(R.layout.activity_main);
 
         this.toolbar = findViewById(R.id.toolbar);
-        this.setSupportActionBar(toolbar);
+//        this.setSupportActionBar(toolbar);
         this.drawer = findViewById(R.id.drawer_layout);
 
         this.fragmentManager = this.getSupportFragmentManager();

@@ -6,13 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
+
+    CarouselView carouselView;
+
+    int[] sampleImages = {1, 2, 3, 4, 5};
 
     public static HomeFragment newInstance(String title) {
         HomeFragment fragment = new HomeFragment();
@@ -28,6 +35,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         return view;
     }
+
+    ImageListener imageListener = (position, imageView) -> imageView.setImageResource(sampleImages[position]);
 
     @Override
     public void onAttach(Context context) {
