@@ -61,32 +61,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo2"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo2"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo3"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo3"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
                 </LinearLayout>
             </LinearLayout>
@@ -110,32 +110,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo4"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo4"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo5"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo5"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
-                    <it.gmariotti.cardslib.library.view.CardViewNative
-                        android:id="@+id/carddemo6"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        />
+<!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
+<!--                        android:id="@+id/carddemo6"-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="12dp"-->
+<!--                        android:layout_marginRight="12dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        />-->
 
                 </LinearLayout>
 
