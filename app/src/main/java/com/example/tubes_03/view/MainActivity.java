@@ -7,9 +7,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.example.tubes_03.R;
+import com.example.tubes_03.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private DrawerLayout drawer;
@@ -23,14 +27,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private LoginFragment loginFragment;
     private AccountFragment accountFragment;
     private SettingFragment settingFragment;
+    private ActivityMainBinding bind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        this.setSupportActionBar(this.bind.toolbar);
+
         this.toolbar = findViewById(R.id.toolbar);
-//        this.setSupportActionBar(toolbar);
         this.drawer = findViewById(R.id.drawer_layout);
 
         this.fragmentManager = this.getSupportFragmentManager();
@@ -77,5 +83,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 break;
         }
         ft.commit();
+
+        this.drawer.closeDrawers();
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(this.drawer.getWindowToken(), 0);
+    }
+
+    @Override
+    public void closeApplication() {
+        this.moveTaskToBack(true);
+        this.finish();
+        this.drawer.closeDrawers();
     }
 }

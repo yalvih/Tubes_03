@@ -22,6 +22,7 @@
                 android:id="@+id/drawer_icon_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_home_24"
                 android:padding="18dp"
                 />
 
@@ -32,6 +33,7 @@
                 android:paddingTop="22dp"
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
+                android:fontFamily="@font/google_font_normal"
                 android:layout_gravity="center"
                 android:text="Home"
                 />
@@ -48,6 +50,7 @@
                 android:id="@+id/drawer_icon_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_data_usage_24"
                 android:padding="18dp"
                 />
 
@@ -56,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="22dp"
+                android:fontFamily="@font/google_font_normal"
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
@@ -75,6 +79,7 @@
                 android:id="@+id/drawer_icon_news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_article_24"
                 android:padding="18dp"
                 />
 
@@ -86,7 +91,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-
+                android:fontFamily="@font/google_font_normal"
                 android:text="Berita"
                 />
 
@@ -102,6 +107,7 @@
                 android:id="@+id/drawer_image_faq"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_help_24"
                 android:padding="18dp"
                 />
 
@@ -113,7 +119,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-
+                android:fontFamily="@font/google_font_normal"
                 android:text="FAQ"
                 />
 
@@ -134,6 +140,7 @@
                 android:id="@+id/drawer_icon_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_login_24"
                 android:padding="18dp"
                 />
 
@@ -145,7 +152,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-
+                android:fontFamily="@font/google_font_normal"
                 android:text="Login"
                 />
 
@@ -160,6 +167,7 @@
                 android:id="@+id/drawer_image_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_settings_24"
                 android:padding="18dp"
                 />
 
@@ -171,7 +179,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-
+                android:fontFamily="@font/google_font_normal"
                 android:text="Settings"
                 />
 
@@ -186,6 +194,7 @@
                 android:id="@+id/drawer_image_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_exit_to_app_24"
                 android:padding="18dp"
                 />
 
@@ -197,7 +206,7 @@
                 android:paddingBottom="22dp"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-
+                android:fontFamily="@font/google_font_normal"
                 android:text="Exit"
                 />
 
