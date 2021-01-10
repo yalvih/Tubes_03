@@ -14,5 +14,6 @@ public class COVIDStats extends Application {
         super.onCreate();
 
         FlowManager.init(new FlowConfig.Builder(this).openDatabasesOnInit(true).build());
+        FlowManager.getDatabase(DBCovidStats.class).reset(getBaseContext());
     }
 }

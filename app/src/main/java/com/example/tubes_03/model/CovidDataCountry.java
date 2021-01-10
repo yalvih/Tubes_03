@@ -7,7 +7,7 @@ import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 @Table(database = DBCovidStats.class)
-public class CovidData extends BaseModel {
+public class CovidDataCountry extends BaseModel {
     @Column
     @PrimaryKey(autoincrement = true)
     int id;
@@ -15,6 +15,12 @@ public class CovidData extends BaseModel {
     String country;
     @Column
     String countryCode;
+    @Column
+    String province;
+    @Column
+    String city;
+    @Column
+    String cityCode;
     @Column
     String lat;
     @Column
@@ -26,11 +32,9 @@ public class CovidData extends BaseModel {
     @Column
     int recovered;
     @Column
-    String status;
+    String active;
     @Column
     String date;
-    @Column
-    String locationID;
 
     public int getId() {
         return id;
@@ -42,6 +46,18 @@ public class CovidData extends BaseModel {
 
     public String getCountryCode() {
         return countryCode;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCityCode() {
+        return cityCode;
     }
 
     public String getLat() {
@@ -64,20 +80,12 @@ public class CovidData extends BaseModel {
         return recovered;
     }
 
-    public String getStatus() {
-        return status;
+    public String getActive() {
+        return active;
     }
 
     public String getDate() {
         return date;
-    }
-
-    public String getLocationID() {
-        return locationID;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setCountry(String country) {
@@ -86,6 +94,18 @@ public class CovidData extends BaseModel {
 
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
     }
 
     public void setLat(String lat) {
@@ -108,15 +128,11 @@ public class CovidData extends BaseModel {
         this.recovered = recovered;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setActive(String active) {
+        this.active = active;
     }
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public void setLocationID(String locationID) {
-        this.locationID = locationID;
     }
 }
