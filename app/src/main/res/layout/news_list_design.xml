@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/list_item_string"
+                    android:id="@+id/news_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="News Title"
@@ -46,7 +46,7 @@
                     android:layout_weight="1"/>
 
                 <TextView
-                    android:id="@+id/list_item_string_date"
+                    android:id="@+id/news_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/google_font_normal"
@@ -55,7 +55,7 @@
                     android:hint="01-01-1970"/>
 
                 <TextView
-                    android:id="@+id/list_item_string_detail"
+                    android:id="@+id/news_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/google_font_normal"

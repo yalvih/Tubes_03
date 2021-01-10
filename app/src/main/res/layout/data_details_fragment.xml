@@ -47,7 +47,8 @@
                     android:fontFamily="@font/google_font_normal"
                     android:layout_gravity="center_horizontal"
                     android:text="99999"
-                    android:textSize="20sp">
+                    android:textSize="20sp"
+                    android:id="@+id/indonesia_confirmed_number">
                 </TextView>
 
                 <LinearLayout
@@ -89,7 +90,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200">
+                            android:text="1200"
+                            android:id="@+id/indonesia_death_number">
 
                         </TextView>
 
@@ -129,7 +131,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200">
+                            android:text="1200"
+                            android:id="@+id/indonesia_sick_number">
 
                         </TextView>
 
@@ -168,7 +171,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200">
+                            android:text="1200"
+                            android:id="@+id/indonesia_recovered_number">
 
                         </TextView>
 
