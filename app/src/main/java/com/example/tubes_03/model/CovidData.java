@@ -20,11 +20,17 @@ public class CovidData extends BaseModel {
     @Column
     String lon;
     @Column
-    int cases;
+    int confirmed;
+    @Column
+    int deaths;
+    @Column
+    int recovered;
     @Column
     String status;
     @Column
     String date;
+    @Column
+    String locationID;
 
     public int getId() {
         return id;
@@ -46,8 +52,16 @@ public class CovidData extends BaseModel {
         return lon;
     }
 
-    public int getCases() {
-        return cases;
+    public int getConfirmed() {
+        return confirmed;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getRecovered() {
+        return recovered;
     }
 
     public String getStatus() {
@@ -56,6 +70,10 @@ public class CovidData extends BaseModel {
 
     public String getDate() {
         return date;
+    }
+
+    public String getLocationID() {
+        return locationID;
     }
 
     public void setId(int id) {
@@ -78,8 +96,16 @@ public class CovidData extends BaseModel {
         this.lon = lon;
     }
 
-    public void setCases(int cases) {
-        this.cases = cases;
+    public void setConfirmed(int confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public void setDeaths(int deaths) {
+        this.deaths = deaths;
+    }
+
+    public void setRecovered(int recovered) {
+        this.recovered = recovered;
     }
 
     public void setStatus(String status) {
@@ -88,5 +114,9 @@ public class CovidData extends BaseModel {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setLocationID(String locationID) {
+        this.locationID = locationID;
     }
 }

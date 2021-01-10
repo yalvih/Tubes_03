@@ -9,13 +9,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.strictmode.ImplicitDirectBootViolation;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.example.tubes_03.DBCovidStats;
+import com.example.tubes_03.WebserviceTask;
 import com.example.tubes_03.R;
+import com.example.tubes_03.UIThreadedWrapper;
 import com.example.tubes_03.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+public class MainActivity extends AppCompatActivity implements FragmentListener, WebserviceTask.IMainActivity {
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FragmentManager fragmentManager;
@@ -27,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private LoginFragment loginFragment;
     private AccountFragment accountFragment;
     private SettingFragment settingFragment;
+    private UIThreadedWrapper uiThreadedWrapper;
+    private WebserviceTask dataInitializer;
     private ActivityMainBinding bind;
 
     @Override
@@ -53,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
+        this.uiThreadedWrapper = new UIThreadedWrapper(this);
+        this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
+
+        this.dataInitializer.execute();
         changePage(1);
     }
 
