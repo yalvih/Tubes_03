@@ -22,9 +22,6 @@ public class UIThreadedWrapper extends Handler {
         if (msg.what == UIThreadedWrapper.PASS_RESULTS_WORLDWIDE) {
             CovidDataWorldwide data = (CovidDataWorldwide) msg.obj;
 //            this.mainActivity.passResultToTextViews(data);
-//            Log.d("dataTestCon", data.getTotalConfirmed());
-//            Log.d("dataTestDed", data.getTotalDeaths());
-//            Log.d("dataTestRec", data.getTotalRecovered());
         }
     }
 

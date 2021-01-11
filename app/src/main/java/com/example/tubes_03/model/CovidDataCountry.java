@@ -10,129 +10,129 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 public class CovidDataCountry extends BaseModel {
     @Column
     @PrimaryKey(autoincrement = true)
-    int id;
+    int ID;
     @Column
-    String country;
+    String Country;
     @Column
-    String countryCode;
+    String CountryCode;
     @Column
-    String province;
+    String Province;
     @Column
-    String city;
+    String City;
     @Column
-    String cityCode;
+    String CityCode;
     @Column
-    String lat;
+    String Lat;
     @Column
-    String lon;
+    String Lon;
     @Column
-    int confirmed;
+    int Confirmed;
     @Column
-    int deaths;
+    int Deaths;
     @Column
-    int recovered;
+    int Recovered;
     @Column
-    String active;
+    String Active;
     @Column
-    String date;
+    String Date;
 
     public int getId() {
-        return id;
+        return ID;
     }
 
     public String getCountry() {
-        return country;
+        return Country;
     }
 
     public String getCountryCode() {
-        return countryCode;
+        return CountryCode;
     }
 
     public String getProvince() {
-        return province;
+        return Province;
     }
 
     public String getCity() {
-        return city;
+        return City;
     }
 
     public String getCityCode() {
-        return cityCode;
+        return CityCode;
     }
 
     public String getLat() {
-        return lat;
+        return Lat;
     }
 
     public String getLon() {
-        return lon;
+        return Lon;
     }
 
     public int getConfirmed() {
-        return confirmed;
+        return Confirmed;
     }
 
     public int getDeaths() {
-        return deaths;
+        return Deaths;
     }
 
     public int getRecovered() {
-        return recovered;
+        return Recovered;
     }
 
     public String getActive() {
-        return active;
+        return Active;
     }
 
     public String getDate() {
-        return date;
+        return Date;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCountry(String Country) {
+        this.Country = Country;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setCountryCode(String CountryCode) {
+        this.CountryCode = CountryCode;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public void setProvince(String Province) {
+        this.Province = Province;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCity(String City) {
+        this.City = City;
     }
 
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
+    public void setCityCode(String CityCode) {
+        this.CityCode = CityCode;
     }
 
-    public void setLat(String lat) {
-        this.lat = lat;
+    public void setLat(String Lat) {
+        this.Lat = Lat;
     }
 
-    public void setLon(String lon) {
-        this.lon = lon;
+    public void setLon(String Lon) {
+        this.Lon = Lon;
     }
 
-    public void setConfirmed(int confirmed) {
-        this.confirmed = confirmed;
+    public void setConfirmed(int Confirmed) {
+        this.Confirmed = Confirmed;
     }
 
-    public void setDeaths(int deaths) {
-        this.deaths = deaths;
+    public void setDeaths(int Deaths) {
+        this.Deaths = Deaths;
     }
 
-    public void setRecovered(int recovered) {
-        this.recovered = recovered;
+    public void setRecovered(int Recovered) {
+        this.Recovered = Recovered;
     }
 
-    public void setActive(String active) {
-        this.active = active;
+    public void setActive(String Active) {
+        this.Active = Active;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate(String Date) {
+        this.Date = Date;
     }
 }

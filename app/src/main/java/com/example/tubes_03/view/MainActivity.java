@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.uiThreadedWrapper = new UIThreadedWrapper(this);
         this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
 
-        this.dataInitializer.executeWorldwide();
+        this.dataInitializer.executeIndonesia();
         changePage(1);
     }
 
