@@ -24,6 +24,13 @@ import java.text.DecimalFormat;
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
+    CarouselView carouselView;
+    int[] sampleImages = {
+            R.drawable.p_1,
+            R.drawable.p_2,
+            R.drawable.p_3,
+            R.drawable.p_4
+    };
 
     public static HomeFragment newInstance(String title) {
         HomeFragment fragment = new HomeFragment();
@@ -45,6 +52,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         this.text_death_ww = view.findViewById(R.id.worldwide_death_number);
         this.text_sick_ww = view.findViewById(R.id.worldwide_sick_number);
         this.text_recovered_ww = view.findViewById(R.id.worldwide_recovered_number);
+
+        carouselView = view.findViewById(R.id.carouselView);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
 
         return view;
     }
@@ -84,4 +95,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         this.text_sick_ww.setText(thousandSeparatorFormat.format(totalSick));
         this.text_recovered_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalRecovered())));
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 }

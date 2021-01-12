@@ -11,13 +11,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.strictmode.ImplicitDirectBootViolation;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 
 import com.example.tubes_03.DBCovidStats;
 import com.example.tubes_03.WebserviceTask;
 import com.example.tubes_03.R;
 import com.example.tubes_03.UIThreadedWrapper;
 import com.example.tubes_03.databinding.ActivityMainBinding;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener, WebserviceTask.IMainActivity {
     private DrawerLayout drawer;
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     private UIThreadedWrapper uiThreadedWrapper;
     private WebserviceTask dataInitializer;
     private ActivityMainBinding bind;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
 
         this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment);
         this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
+
 
         this.dataInitializer.executeWorldwide();
         this.dataInitializer.executeIndonesia();
@@ -106,4 +113,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.finish();
         this.drawer.closeDrawers();
     }
+
+
 }
