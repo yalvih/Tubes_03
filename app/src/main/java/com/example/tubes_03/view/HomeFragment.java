@@ -9,15 +9,21 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
+import com.example.tubes_03.model.CovidDataCountry;
+import com.example.tubes_03.model.CovidDataWorldwide;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+import java.text.DecimalFormat;
+
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
+    private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
 
     public static HomeFragment newInstance(String title) {
         HomeFragment fragment = new HomeFragment();
@@ -30,6 +36,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
+
+        this.text_confirmed_id = view.findViewById(R.id.indonesia_confirmed_number);
+        this.text_death_id = view.findViewById(R.id.indonesia_death_number);
+        this.text_sick_id = view.findViewById(R.id.indonesia_sick_number);
+        this.text_recovered_id = view.findViewById(R.id.indonesia_recovered_number);
+        this.text_confirmed_ww = view.findViewById(R.id.worldwide_confirmed_number);
+        this.text_death_ww = view.findViewById(R.id.worldwide_death_number);
+        this.text_sick_ww = view.findViewById(R.id.worldwide_sick_number);
+        this.text_recovered_ww = view.findViewById(R.id.worldwide_recovered_number);
 
         return view;
     }
@@ -48,5 +63,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void updateTextViewsIndonesia(CovidDataCountry data) {
+        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
+        int totalSick = data.getConfirmed() - data.getDeaths() - data.getRecovered();
+
+        this.text_confirmed_id.setText(thousandSeparatorFormat.format(data.getConfirmed()));
+        this.text_death_id.setText(thousandSeparatorFormat.format(data.getDeaths()));
+        this.text_sick_id.setText(thousandSeparatorFormat.format(totalSick));
+        this.text_recovered_id.setText(thousandSeparatorFormat.format(data.getRecovered()));
+    }
+
+    public void updateTextViewsWorldwide(CovidDataWorldwide data) {
+        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
+        int totalSick = Integer.parseInt(data.getTotalConfirmed()) - Integer.parseInt(data.getTotalDeaths()) - Integer.parseInt(data.getTotalRecovered());
+
+        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalConfirmed())));
+        this.text_death_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalDeaths())));
+        this.text_sick_ww.setText(thousandSeparatorFormat.format(totalSick));
+        this.text_recovered_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalRecovered())));
     }
 }

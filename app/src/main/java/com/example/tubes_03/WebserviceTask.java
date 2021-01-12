@@ -108,6 +108,7 @@ public class WebserviceTask {
                                 Log.d("DatabaseProcessingError", "Data was unable to be stored.");
                             }
                         }).success(transaction -> {}).build().execute();
-//        uiThreadedWrapper.sendResult(data);
+
+        uiThreadedWrapper.sendResultIndonesia();
     }
 }

@@ -59,9 +59,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        this.uiThreadedWrapper = new UIThreadedWrapper(this);
+        this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment);
         this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
 
+        this.dataInitializer.executeWorldwide();
         this.dataInitializer.executeIndonesia();
         changePage(1);
     }

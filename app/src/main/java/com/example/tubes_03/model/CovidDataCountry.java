@@ -9,9 +9,6 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 @Table(database = DBCovidStats.class)
 public class CovidDataCountry extends BaseModel {
     @Column
-    @PrimaryKey(autoincrement = true)
-    int ID;
-    @Column
     String Country;
     @Column
     String CountryCode;
@@ -34,11 +31,8 @@ public class CovidDataCountry extends BaseModel {
     @Column
     String Active;
     @Column
+    @PrimaryKey
     String Date;
-
-    public int getId() {
-        return ID;
-    }
 
     public String getCountry() {
         return Country;
@@ -130,9 +124,5 @@ public class CovidDataCountry extends BaseModel {
 
     public void setActive(String Active) {
         this.Active = Active;
-    }
-
-    public void setDate(String Date) {
-        this.Date = Date;
     }
 }
