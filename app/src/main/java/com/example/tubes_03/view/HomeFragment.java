@@ -27,10 +27,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
     CarouselView carouselView;
     int[] sampleImages = {
-            R.drawable.p_1,
-            R.drawable.p_2,
-            R.drawable.p_3,
-            R.drawable.p_4
+            R.drawable.carousel_1,
+            R.drawable.carousel_2,
+            R.drawable.carousel_3,
+            R.drawable.carousel_4,
+            R.drawable.carousel_5
     };
 
     public static HomeFragment newInstance(String title) {

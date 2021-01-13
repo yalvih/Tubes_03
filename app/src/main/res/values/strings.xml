@@ -1,6 +1,45 @@
 <resources>
-    <string name="app_name">Tubes_03</string>
+    <string name="app_name">Covid Land</string>
     <string name="drawer_open">Drawer opened.</string>
     <string name="drawer_close">Drawer closed.</string>
     <string name="data_loading_placeholder">Loading...</string>
+    <string name="meninggal">Meninggal</string>
+    <string name="dirawat">Dirawat</string>
+    <string name="sembuh">Sembuh</string>
+    <string name="terkonfirmasi">Terkonfirmasi</string>
+    <string name="data_corona_indonesia">DATA CORONA INDONESIA</string>
+    <string name="grafik">GRAFIK</string>
+    <string name="data_corona_dunia">DATA CORONA DUNIA</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up"><u>\u0020Sign up</u></string>
+    <string name="don_t_have_account">Don\'t have account ?</string>
+    <string name="sign_up_title">SIGN UP</string>
+    <string name="covid_land">Covid Land</string>
+    <string name="settings">SETTINGS</string>
+    <string name="terms_and_conditions"><u>Terms and Conditions</u></string>
+    <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nunc eget laoreet lectus. Phasellus in efficitur sem. Duis volutpat hendrerit ante,
+        nec porttitor libero aliquam eu. Sed turpis ligula, tincidunt nec gravida non, tempor quis quam.
+        Etiam eleifend dictum feugiat. Etiam a ante id felis accumsan venenatis. Donec vitae condimentum eros.
+        Fusce vitae lectus blandit, finibus dolor quis, sodales mauris. Mauris ligula ligula, dictum eu dignissim at,
+        pellentesque eget sem. Morbi eget auctor eros, ut gravida justo. Suspendisse pharetra lacinia tempor. In et volutpat nisi.
+        Maecenas ligula ex, bibendum vitae condimentum quis, aliquet at urna. Praesent aliquam dui vitae eros auctor, ut gravida nisi convallis.
+        Ut id hendrerit odio. Cras ante dolor, varius non enim quis, mattis bibendum dui. Phasellus mattis ultricies pharetra. Vestibulum enim turpis, elementum eu dapibus eget,
+        auctor in enim. Praesent sed dictum metus. Mauris eget iaculis risus, eu sagittis nisi. Vivamus vitae dolor venenatis, tincidunt eros at, lobortis nunc. Etiam ullamcorper mauris
+        nec blandit accumsan. Suspendisse eget purus pellentesque, dapibus ipsum eu, porta arcu. Etiam mollis nulla velit, sit amet efficitur sem efficitur at. Nunc at lacinia urna.
+        Donec nibh nisl, suscipit id auctor ac, viverra ac erat. Quisque placerat nisi vitae tristique fringilla. Aenean purus mi, semper vel semper dapibus, ultricies quis augue.
+        Curabitur vel malesuada nulla. Donec et pellentesque neque. Integer vitae pharetra lacus. Etiam ac dolor dapibus, tempus augue at, suscipit risus. Nam tristique bibendum bibendum.
+        Aliquam lacus lacus, dignissim non bibendum nec, aliquet vitae ante. Morbi lectus dui, suscipit eget euismod pulvinar, blandit quis arcu. Nullam feugiat eros hendrerit, dapibus augue ac,
+        viverra quam.
+
+        Pellentesque condimentum ipsum eget eros tincidunt dapibus. Ut vitae elementum velit. Pellentesque non augue semper, consectetur arcu finibus, accumsan elit. Aliquam quis nisl posuere, laoreet tellus a, vulputate lorem. Quisque sollicitudin, velit in auctor efficitur, enim enim dignissim augue, a euismod sapien neque at nunc. Quisque interdum lorem urna, id semper orci iaculis nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris congue viverra magna, in luctus urna finibus eget. Aenean fringilla tincidunt metus, sed sodales est pretium sed. Duis sed tempus sem, vel ultricies odio. Etiam sit amet velit ullamcorper, sodales sem id, auctor mi. Ut id faucibus justo, ut lobortis metus. Cras vitae tellus mauris. Fusce vel imperdiet dolor. Etiam suscipit, augue nec blandit vestibulum, magna neque tempus nibh, vitae fermentum neque lorem at leo.
+
+In pellentesque est ut tellus interdum accumsan. Donec dignissim leo sed ipsum maximus malesuada. Morbi arcu turpis, luctus ac dignissim vitae, auctor id ipsum. Pellentesque interdum dictum magna in rutrum. In hac habitasse platea dictumst. Pellentesque ante lorem, eleifend vitae fringilla congue, tristique sed ante. Nunc sollicitudin, lacus vitae maximus gravida, diam ipsum ornare urna, in feugiat purus nulla vitae lectus. Praesent laoreet dictum lobortis.
+    </string>
+    <string name="terms_and_conditions_title">Terms and Conditions</string>
+    <string name="news">NEWS</string>
+    <string name="faq">FAQ</string>
+    <string name="manual">Manual</string>
 </resources>

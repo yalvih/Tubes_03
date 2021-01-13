@@ -5,18 +5,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
 
-public class SettingFragment extends Fragment implements View.OnClickListener{
-    private FragmentListener fragmentListener;
-    TextView tnc;
+public class TermAndConditionFragment extends Fragment {
 
-    public static SettingFragment newInstance(String title) {
-        SettingFragment fragment = new SettingFragment();
+    private FragmentListener fragmentListener;
+
+    public static TermAndConditionFragment newInstance(String title) {
+        TermAndConditionFragment fragment = new TermAndConditionFragment();
         Bundle args = new Bundle();
         args.putString("app_name", title);
         fragment.setArguments(args);
@@ -25,10 +24,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.setting_fragment, container, false);
-
-        this.tnc = view.findViewById(R.id.tnc);
-        this.tnc.setOnClickListener(this);
+        View view = inflater.inflate(R.layout.term_and_condition_fragment, container, false);
 
         return view;
     }
@@ -41,13 +37,6 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
         }
         else {
             throw new ClassCastException(context.toString() + " must implement FragmentListener!");
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        if (v==tnc){
-            this.fragmentListener.changePage(9);
         }
     }
 }

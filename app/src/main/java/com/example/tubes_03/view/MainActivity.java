@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     private LoginFragment loginFragment;
     private AccountFragment accountFragment;
     private SettingFragment settingFragment;
+    private SignUpFragment signUpFragment;
+    private TermAndConditionFragment termAndConditionFragment;
     private UIThreadedWrapper uiThreadedWrapper;
     private WebserviceTask dataInitializer;
     private ActivityMainBinding bind;
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.loginFragment = LoginFragment.newInstance("COVID Stats");
         this.accountFragment = AccountFragment.newInstance("COVID Stats");
         this.settingFragment = SettingFragment.newInstance("COVID Stats");
+        this.signUpFragment = SignUpFragment.newInstance("COVID Stats");
+        this.termAndConditionFragment = TermAndConditionFragment.newInstance("COVID Stats");
 
         ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.addDrawerListener(abdt);
@@ -69,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
 
         this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment, dataDetailsFragment);
         this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
-
 
         changePage(1);
     }
@@ -112,6 +115,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
                 break;
             case 7:
                 ft.replace(R.id.fragment_container, this.settingFragment).addToBackStack(null);
+                break;
+            case 8:
+                ft.replace(R.id.fragment_container, this.signUpFragment).addToBackStack(null);
+                break;
+            case 9:
+                ft.replace(R.id.fragment_container, this.termAndConditionFragment).addToBackStack(null);
                 break;
         }
         ft.commit();

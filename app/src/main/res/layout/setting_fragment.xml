@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Settings"
-        android:textSize="20sp"
+        android:text="@string/settings"
+        android:textSize="25sp"
         android:paddingBottom="75dp"
         android:fontFamily="@font/google_font_normal"
         />
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:text="Change Theme"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:fontFamily="@font/google_font_normal"
             />
 
@@ -44,7 +44,8 @@
             android:textAlignment="center"
             android:fontFamily="@font/google_font_normal"
             android:textSize="12sp"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
             />
 
 
@@ -58,16 +59,43 @@
         >
 
         <TextView
-            android:id="@+id/delete_all_text"
+            android:id="@+id/manual"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:text="Terms and Conditions"
-            android:textSize="15sp"
+            android:text="@string/manual"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:fontFamily="@font/google_font_normal"
             />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tnc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="@string/terms_and_conditions"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="@font/google_font_normal"
+            />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
