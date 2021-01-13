@@ -22,6 +22,7 @@ import com.synnapps.carouselview.ImageListener;
 import java.text.DecimalFormat;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
+    protected static final int FRAGMENT_CODE = 0;
     private FragmentListener fragmentListener;
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
     CarouselView carouselView;
@@ -56,6 +57,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         carouselView = view.findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imageListener);
+
+        this.fragmentListener.loadData(FRAGMENT_CODE);
 
         return view;
     }

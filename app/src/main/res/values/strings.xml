@@ -2,4 +2,5 @@
     <string name="app_name">Tubes_03</string>
     <string name="drawer_open">Drawer opened.</string>
     <string name="drawer_close">Drawer closed.</string>
+    <string name="data_loading_placeholder">Loading...</string>
 </resources>

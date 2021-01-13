@@ -32,6 +32,7 @@ public class WebserviceTask {
     private Context context;
     private GsonBuilder gson;
     private UIThreadedWrapper uiThreadedWrapper;
+    private int fragmentCode;
 
     public interface IMainActivity {
         void changePage(int page);
@@ -44,11 +45,13 @@ public class WebserviceTask {
         this.gson = new GsonBuilder().setExclusionStrategies(new ExclusionStrategy[] {new DBFlowGsonExclusion()});
     }
 
-    public void executeWorldwide() {
+    public void executeWorldwide(int fragmentCode) {
+        this.fragmentCode = fragmentCode;
         this.callVolleyWorldwide();
     }
 
-    public void executeIndonesia() {
+    public void executeIndonesia(int fragmentCode) {
+        this.fragmentCode = fragmentCode;
         this.callVolleyIndonesia();
     }
 
@@ -89,7 +92,7 @@ public class WebserviceTask {
     public void processResultWorldwide(String response) {
         CovidDataWorldwide dataWorldwide = gson.create().fromJson(response, CovidDataWorldwide.class);
 
-        uiThreadedWrapper.sendResultWorldwide(dataWorldwide);
+        uiThreadedWrapper.sendResultWorldwide(dataWorldwide, fragmentCode);
     }
 
     public void processResultIndonesia(String response) {
@@ -109,6 +112,6 @@ public class WebserviceTask {
                             }
                         }).success(transaction -> {}).build().execute();
 
-        uiThreadedWrapper.sendResultIndonesia();
+        uiThreadedWrapper.sendResultIndonesia(fragmentCode);
     }
 }

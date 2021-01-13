@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="@font/google_font_normal"
-                        android:text="99999"
+                        android:text="@string/data_loading_placeholder"
                         android:textSize="20sp"
                         android:id="@+id/indonesia_confirmed_number">
                     </TextView>
@@ -134,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/indonesia_death_number">
 
                         </TextView>
@@ -174,7 +174,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/indonesia_sick_number">
 
                         </TextView>
@@ -213,6 +213,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/indonesia_recovered_number">
 
                         </TextView>
@@ -280,7 +281,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/google_font_normal"
                     android:layout_gravity="center_horizontal"
-                    android:text="99999"
+                    android:text="@string/data_loading_placeholder"
                     android:id="@+id/worldwide_confirmed_number"
                     android:textSize="20sp">
                 </TextView>
@@ -325,7 +326,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/worldwide_death_number">
 
                         </TextView>
@@ -366,7 +367,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/worldwide_sick_number">
 
                         </TextView>
@@ -406,7 +407,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="1200"
+                            android:text="@string/data_loading_placeholder"
                             android:id="@+id/worldwide_recovered_number">
 
                         </TextView>

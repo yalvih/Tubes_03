@@ -25,6 +25,9 @@ import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener, WebserviceTask.IMainActivity {
+    protected final int CALLER_FRAGMENT_HOME = 0;
+    protected final int CALLER_FRAGMENT_DETAILS_IDN = 1;
+    protected final int CALLER_FRAGMENT_DETAILS_WORLD = 2;
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FragmentManager fragmentManager;
@@ -39,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     private UIThreadedWrapper uiThreadedWrapper;
     private WebserviceTask dataInitializer;
     private ActivityMainBinding bind;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +67,25 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment);
+        this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment, dataDetailsFragment);
         this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
 
 
-        this.dataInitializer.executeWorldwide();
-        this.dataInitializer.executeIndonesia();
         changePage(1);
+    }
+
+    @Override
+    public void loadData(int fragmentCode) {
+        if (fragmentCode == CALLER_FRAGMENT_DETAILS_IDN) {
+            this.dataInitializer.executeIndonesia(fragmentCode);
+        }
+        else if (fragmentCode == CALLER_FRAGMENT_DETAILS_WORLD) {
+            this.dataInitializer.executeWorldwide(fragmentCode);
+        }
+        else {
+            this.dataInitializer.executeIndonesia(fragmentCode);
+            this.dataInitializer.executeWorldwide(fragmentCode);
+        }
     }
 
     @Override
