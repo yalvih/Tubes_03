@@ -1,37 +1,37 @@
 package com.example.tubes_03.model;
 
 public class CovidDataWorldwide {
-    private String TotalConfirmed;
-    private String TotalDeaths;
-    private String TotalRecovered;
+    private int TotalConfirmed;
+    private int TotalDeaths;
+    private int TotalRecovered;
 
-    public CovidDataWorldwide(String TotalConfirmed, String TotalDeaths, String TotalRecovered) {
+    public CovidDataWorldwide(int TotalConfirmed, int TotalDeaths, int TotalRecovered) {
         this.TotalConfirmed = TotalConfirmed;
         this.TotalDeaths = TotalDeaths;
         this.TotalRecovered = TotalRecovered;
     }
 
-    public String getTotalConfirmed() {
+    public int getTotalConfirmed() {
         return TotalConfirmed;
     }
 
-    public String getTotalDeaths() {
+    public int getTotalDeaths() {
         return TotalDeaths;
     }
 
-    public String getTotalRecovered() {
+    public int getTotalRecovered() {
         return TotalRecovered;
     }
 
-    public void setTotalConfirmed(String TotalConfirmed) {
+    public void setTotalConfirmed(int TotalConfirmed) {
         this.TotalConfirmed = TotalConfirmed;
     }
 
-    public void setTotalDeaths(String TotalDeaths) {
+    public void setTotalDeaths(int TotalDeaths) {
         this.TotalDeaths = TotalDeaths;
     }
 
-    public void setTotalRecovered(String TotalRecovered) {
+    public void setTotalRecovered(int TotalRecovered) {
         this.TotalRecovered = TotalRecovered;
     }
 }

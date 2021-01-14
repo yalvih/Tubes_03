@@ -228,29 +228,42 @@
                 android:textSize="25sp">
             </TextView>
 
-            <ImageView
-                android:id="@+id/graph1"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/banner">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            </ImageView>
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/details_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    />
 
-            <ImageView
-                android:id="@+id/graph2"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/banner">
+                <!--            <ImageView-->
+                <!--                android:id="@+id/graph1"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="220dp"-->
+                <!--                android:src="@drawable/banner">-->
 
-            </ImageView>
+                <!--            </ImageView>-->
 
-            <ImageView
-                android:id="@+id/graph3"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/banner">
+                <!--            <ImageView-->
+                <!--                android:id="@+id/graph2"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="220dp"-->
+                <!--                android:src="@drawable/banner">-->
 
-            </ImageView>
+                <!--            </ImageView>-->
+
+                <!--            <ImageView-->
+                <!--                android:id="@+id/graph3"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="220dp"-->
+                <!--                android:src="@drawable/banner">-->
+
+                <!--            </ImageView>-->
+            </LinearLayout>
 
         </LinearLayout>
 

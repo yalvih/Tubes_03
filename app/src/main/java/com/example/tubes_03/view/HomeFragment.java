@@ -92,12 +92,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public void updateTextViewsWorldwide(CovidDataWorldwide data) {
         DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalSick = Integer.parseInt(data.getTotalConfirmed()) - Integer.parseInt(data.getTotalDeaths()) - Integer.parseInt(data.getTotalRecovered());
+        int totalSick = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
 
-        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalConfirmed())));
-        this.text_death_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalDeaths())));
+        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(data.getTotalConfirmed()));
+        this.text_death_ww.setText(thousandSeparatorFormat.format(data.getTotalDeaths()));
         this.text_sick_ww.setText(thousandSeparatorFormat.format(totalSick));
-        this.text_recovered_ww.setText(thousandSeparatorFormat.format(Integer.parseInt(data.getTotalRecovered())));
+        this.text_recovered_ww.setText(thousandSeparatorFormat.format(data.getTotalRecovered()));
     }
 
     ImageListener imageListener = new ImageListener() {
