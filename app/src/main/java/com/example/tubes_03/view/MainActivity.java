@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
                 ft.replace(R.id.fragment_container, this.settingFragment).addToBackStack(null);
                 break;
             case 8:
-                ft.replace(R.id.fragment_container, this.signUpFragment).addToBackStack(null);
+                ft.replace(R.id.fragment_container, this.signUpFragment).addToBackStack(this.loginFragment.getClass().getName());
                 break;
             case 9:
                 ft.replace(R.id.fragment_container, this.termAndConditionFragment).addToBackStack(null);
