@@ -4,12 +4,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
@@ -17,11 +19,15 @@ import com.example.tubes_03.model.CovidDataCountry;
 import com.example.tubes_03.model.CovidDataWorldwide;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.synnapps.carouselview.ImageListener;
+
+import org.intellij.lang.annotations.JdkConstants;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -33,6 +39,7 @@ public class DataDetailsFragment extends Fragment {
     private FragmentListener fragmentListener;
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
     private PieChart dataChart;
+    private TypedValue textColor;
 
     public static DataDetailsFragment newInstance(String title) {
         DataDetailsFragment fragment = new DataDetailsFragment();
@@ -46,6 +53,9 @@ public class DataDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.data_details_fragment, container, false);
 
+        this.textColor = new TypedValue();
+        getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, this.textColor, true);
+
         this.text_confirmed_id = view.findViewById(R.id.indonesia_confirmed_number);
         this.text_death_id = view.findViewById(R.id.indonesia_death_number);
         this.text_sick_id = view.findViewById(R.id.indonesia_sick_number);
@@ -56,8 +66,9 @@ public class DataDetailsFragment extends Fragment {
         this.text_recovered_ww = view.findViewById(R.id.worldwide_recovered_number);
         this.dataChart = view.findViewById(R.id.details_chart);
 
-        this.fragmentListener.loadData(FRAGMENT_CODE);
         initializePieChart();
+        this.fragmentListener.loadData(FRAGMENT_CODE);
+        setPieChartSettings();
 
         return view;
     }
@@ -104,9 +115,15 @@ public class DataDetailsFragment extends Fragment {
     }
 
     public void initializePieChart() {
-        this.dataChart.getDescription().setEnabled(false);
         this.dataChart.setRotationEnabled(false);
         this.dataChart.animateY(1500, Easing.EasingOption.EaseInOutQuad);
+
+        this.dataChart.setCenterText("Jumlah Kasus");
+        this.dataChart.setCenterTextTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
+        this.dataChart.setCenterTextSize(25f);
+        this.dataChart.setCenterTextColor(textColor.data);
+        this.dataChart.setNoDataTextTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
+
         this.dataChart.setHoleColor(Color.parseColor("#00000000"));
         this.dataChart.setHoleRadius(60f);
         this.dataChart.setTransparentCircleRadius(65f);
@@ -143,5 +160,19 @@ public class DataDetailsFragment extends Fragment {
 
         dataChart.setData(chartData);
         dataChart.invalidate();
+    }
+
+    public void setPieChartSettings() {
+        Legend legends = this.dataChart.getLegend();
+        legends.setTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
+        legends.setTextSize(13f);
+
+        legends.setTextColor(textColor.data);
+        legends.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legends.setFormSize(13f);
+        legends.setXEntrySpace(13f);
+
+        Description description = this.dataChart.getDescription();
+        description.setEnabled(false);
     }
 }
