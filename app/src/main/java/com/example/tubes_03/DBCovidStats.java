@@ -9,5 +9,5 @@ import com.raizlabs.android.dbflow.annotation.Database;
 public class DBCovidStats {
     public static final String NAME = "CovidStats";
 
-    public static final int VERSION = 6;
+    public static final int VERSION = 7;
 }

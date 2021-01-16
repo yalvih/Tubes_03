@@ -5,7 +5,6 @@ import android.os.Message;
 import android.util.Log;
 
 import com.example.tubes_03.model.CovidDataCountry;
-import com.example.tubes_03.model.CovidDataCountry_Table;
 import com.example.tubes_03.model.CovidDataWorldwide;
 import com.example.tubes_03.view.DataDetailsFragment;
 import com.example.tubes_03.view.HomeFragment;
@@ -52,15 +51,9 @@ public class UIThreadedWrapper extends Handler {
         }
     }
 
-    public void sendResultIndonesia(int fragmentCode) {
+    public void sendResultIndonesia(CovidDataCountry data, int fragmentCode) {
         this.fragmentCode = fragmentCode;
         Message msg = new Message();
-        CovidDataCountry data = SQLite.select().
-                from(CovidDataCountry.class).
-                orderBy(CovidDataCountry_Table.Date, false).
-                limit(1).
-                querySingle();
-
         msg.what = PASS_RESULTS_INDONESIA;
         msg.obj = data;
 

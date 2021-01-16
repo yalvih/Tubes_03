@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
 import com.example.tubes_03.model.CovidDataCountry;
-import com.example.tubes_03.model.CovidDataCountry_Table;
 import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
 import com.raizlabs.android.dbflow.sql.language.SQLite;

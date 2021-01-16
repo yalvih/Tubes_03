@@ -75,9 +75,9 @@ public class DataDetailsFragment extends Fragment {
 
     public void updateTextViewsIndonesia(CovidDataCountry data) {
         DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalConfirmed = data.getConfirmed();
-        int totalDeaths = data.getDeaths();
-        int totalRecovered = data.getRecovered();
+        int totalConfirmed = data.getTotalConfirmed();
+        int totalDeaths = data.getTotalDeaths();
+        int totalRecovered = data.getTotalRecovered();
         int totalSick = totalConfirmed - totalDeaths - totalRecovered;
 
         this.text_confirmed_id.setText(thousandSeparatorFormat.format(totalConfirmed));
@@ -106,11 +106,10 @@ public class DataDetailsFragment extends Fragment {
     public void initializePieChart() {
         this.dataChart.getDescription().setEnabled(false);
         this.dataChart.setRotationEnabled(false);
-        this.dataChart.animateY(2000, Easing.EasingOption.EaseInOutQuad);
+        this.dataChart.animateY(1500, Easing.EasingOption.EaseInOutQuad);
         this.dataChart.setHoleColor(Color.parseColor("#00000000"));
         this.dataChart.setHoleRadius(60f);
         this.dataChart.setTransparentCircleRadius(65f);
-
     }
 
     public void setPieChartData(int death, int sick, int recovered) {

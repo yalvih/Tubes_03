@@ -12,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tubes_03.model.CovidDataCountry;
 import com.example.tubes_03.model.CovidDataWorldwide;
+import com.example.tubes_03.model.CovidSummaryResponse;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.GsonBuilder;
@@ -27,8 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class WebserviceTask {
-    private final String URL_WORLD = "https://api.covid19api.com/world/total";
-    private final String URL_INDONESIA = "https://api.covid19api.com/total/country/indonesia";
+    private final String URL = "https://api.covid19api.com/summary";
     private Context context;
     private GsonBuilder gson;
     private UIThreadedWrapper uiThreadedWrapper;
@@ -47,37 +47,23 @@ public class WebserviceTask {
 
     public void executeWorldwide(int fragmentCode) {
         this.fragmentCode = fragmentCode;
-        this.callVolleyWorldwide();
+        this.callVolley(0);
     }
 
     public void executeIndonesia(int fragmentCode) {
         this.fragmentCode = fragmentCode;
-        this.callVolleyIndonesia();
+        this.callVolley(1);
     }
 
-    public void callVolleyWorldwide() {
+    public void callVolley(int processCode) {
         RequestQueue queue = Volley.newRequestQueue(this.context);
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_WORLD, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                processResultWorldwide(response.toString());
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("VolleyError", error.getMessage());
-            }
-        });
-
-        queue.add(request);
-    }
-
-    public void callVolleyIndonesia() {
-        RequestQueue queue = Volley.newRequestQueue(this.context);
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, URL_INDONESIA, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                processResultIndonesia(response.toString());
+                if (processCode == 0) {
+                    processResultWorldwide(response.toString());
+                }
+                else processResultIndonesia(response.toString());
             }
         }, new Response.ErrorListener() {
             @Override
@@ -90,28 +76,22 @@ public class WebserviceTask {
     }
 
     public void processResultWorldwide(String response) {
-        CovidDataWorldwide dataWorldwide = gson.create().fromJson(response, CovidDataWorldwide.class);
+        CovidSummaryResponse data = gson.create().fromJson(response, CovidSummaryResponse.class);
 
-        uiThreadedWrapper.sendResultWorldwide(dataWorldwide, fragmentCode);
+        uiThreadedWrapper.sendResultWorldwide(data.getGlobal(), fragmentCode);
     }
 
     public void processResultIndonesia(String response) {
-        CovidDataCountry[] data = gson.create().fromJson(response, CovidDataCountry[].class);
+        CovidDataCountry dataIDN = null;
+        CovidSummaryResponse data = gson.create().fromJson(response, CovidSummaryResponse.class);
 
-        FlowManager.getDatabase(DBCovidStats.class).beginTransactionAsync(
-                new ProcessModelTransaction.Builder<>(
-                        new ProcessModelTransaction.ProcessModel<CovidDataCountry>() {
-                            @Override
-                            public void processModel(CovidDataCountry individualData, DatabaseWrapper wrapper) {
-                                individualData.save();
-                            }
-                        }).addAll(data).build()).error(new Transaction.Error() {
-                            @Override
-                            public void onError(Transaction transaction, Throwable error) {
-                                Log.d("DatabaseProcessingError", "Data was unable to be stored.");
-                            }
-                        }).success(transaction -> {}).build().execute();
+        for (int i = 0; i < data.getCountries().length; i++) {
+            if (data.getCountries()[i].getCountryCode().equals("ID")) {
+                dataIDN = data.getCountries()[i];
+                break;
+            }
+        }
 
-        uiThreadedWrapper.sendResultIndonesia(fragmentCode);
+        uiThreadedWrapper.sendResultIndonesia(dataIDN, fragmentCode);
     }
 }
