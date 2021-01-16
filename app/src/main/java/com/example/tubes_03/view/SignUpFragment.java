@@ -18,7 +18,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
-    private TextView signup_username, signup_password, signup_retypepass;
+    private TextView error, signup_username, signup_password, signup_retypepass;
     private Button signup_confirm;
 
     public static SignUpFragment newInstance(String title) {
@@ -33,6 +33,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sign_up_fragment, container, false);
 
+        this.error = view.findViewById(R.id.error_message);
         this.signup_username = view.findViewById(R.id.username);
         this.signup_password = view.findViewById(R.id.password);
         this.signup_retypepass = view.findViewById(R.id.retype_password);
@@ -62,20 +63,21 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             String passwordConfirm = this.signup_retypepass.getText().toString();
 
             if (username.length() == 0) {
-                Log.d("aeugh", "Username is empty!");
+                this.error.setText(R.string.logsign_user_empty);
             }
             else {
                 if (password.length() == 0) {
-                    Log.d("aeugh", "Password is empty!");
+                    this.error.setText(R.string.logsign_password_empty);
                 }
                 else if (!passwordConfirm.equals(password)) {
-                    Log.d("aeugh", "Passwords do not match!");
+                    this.error.setText(R.string.logsign_password_nomatch);
                 }
                 else {
                     Users user = new Users();
                     user.setUsername(username);
                     user.setPassword(password);
                     user.save();
+                    Log.d("aeugh", "Sign up successful!");
                 }
             }
         }

@@ -12,14 +12,13 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-import com.example.tubes_03.model.CovidDataCountry;
 import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 public class LoginFragment extends Fragment implements View.OnClickListener{
     private FragmentListener fragmentListener;
-    private TextView login_username, login_password, sign_up;
+    private TextView error, login_username, login_password, sign_up;
     private Button login_confirm;
 
     public static LoginFragment newInstance(String title) {
@@ -34,6 +33,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
 
+        this.error = view.findViewById(R.id.error_message);
         this.login_username = view.findViewById(R.id.username);
         this.login_password = view.findViewById(R.id.password);
         this.login_confirm = view.findViewById(R.id.login_confirm);
@@ -63,10 +63,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             String password = this.login_password.getText().toString();
 
             if (username.length() == 0) {
-                Log.d("aeugh", "Username is empty!");
+                this.error.setText(R.string.logsign_user_empty);
             }
             else if (password.length() == 0) {
-                Log.d("aeugh", "Password is empty!");
+                this.error.setText(R.string.logsign_password_empty);
             }
             else {
                 Users currentUser = SQLite.select().
@@ -75,11 +75,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                         querySingle();
 
                 if (currentUser == null) {
-                    Log.d("aeugh", "User does not exist!");
+                    this.error.setText(R.string.logsign_user_nomatch);
                 }
                 else {
                     if (!currentUser.getPassword().equals(password)) {
-                        Log.d("aeugh", "Password does not match!");
+                        this.error.setText(R.string.logsign_password_wrong);
                     }
                     else {
                         Log.d("aeugh", "Login successful!");

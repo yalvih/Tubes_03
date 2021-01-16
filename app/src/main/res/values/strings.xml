@@ -14,7 +14,7 @@
     <string name="username">Username</string>
     <string name="login">LOGIN</string>
     <string name="sign_up"><u>\u0020Sign up</u></string>
-    <string name="don_t_have_account">Don\'t have account ?</string>
+    <string name="don_t_have_account">Don\'t have an account yet? </string>
     <string name="sign_up_title">SIGN UP</string>
     <string name="covid_land">Covid Land</string>
     <string name="settings">SETTINGS</string>
@@ -42,4 +42,9 @@ In pellentesque est ut tellus interdum accumsan. Donec dignissim leo sed ipsum m
     <string name="news">NEWS</string>
     <string name="faq">FAQ</string>
     <string name="manual">Manual</string>
+    <string name="logsign_user_empty">Username kosong!</string>
+    <string name="logsign_user_nomatch">User tidak ditemukan!</string>
+    <string name="logsign_password_empty">Password kosong!</string>
+    <string name="logsign_password_wrong">Password salah. Silahkan ketik ulang password.</string>
+    <string name="logsign_password_nomatch">Password yang diketik ulang tidak sesuai!</string>
 </resources>

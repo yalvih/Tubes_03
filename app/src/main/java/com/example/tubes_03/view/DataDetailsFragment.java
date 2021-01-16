@@ -121,7 +121,11 @@ public class DataDetailsFragment extends Fragment {
         dataPerCases.put("Dirawat", sick);
         dataPerCases.put("Sembuh", recovered);
 
-//        int[] chartColors = new int[] {R.color.teal_200, R.color.red, R.color.purple_700};
+        ArrayList<Integer> colors = new ArrayList<>();
+        final int[] chartColors = new int[] {Color.rgb(227, 35, 14), Color.rgb(217, 190, 17), Color.rgb(26, 161, 62)};
+        for (int chartColor : chartColors) {
+            colors.add(chartColor);
+        }
 
         for (String type: dataPerCases.keySet()){
             chartEntries.add(new PieEntry(dataPerCases.get(type), type));
@@ -131,7 +135,7 @@ public class DataDetailsFragment extends Fragment {
         //setting text size of the value
         chartDataSet.setValueTextSize(15f);
         //providing color list for coloring different entries
-        chartDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        chartDataSet.setColors(colors);
         //grouping the data set from entry to chart
         PieData chartData = new PieData(chartDataSet);
         //showing the value of the entries, default true if not set
