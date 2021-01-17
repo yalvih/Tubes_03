@@ -166,7 +166,6 @@
                 android:id="@+id/drawer_icon_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_login_24"
                 android:padding="20dp"
                 app:tint="@color/black"
                 />
@@ -180,7 +179,7 @@
                 android:textSize="18sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/google_font_normal"
-                android:text="Login"
+
                 android:textColor="@color/black"
                 />
 

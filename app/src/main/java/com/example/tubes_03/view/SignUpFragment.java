@@ -1,6 +1,7 @@
 package com.example.tubes_03.view;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +17,11 @@ import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class SignUpFragment extends Fragment implements View.OnClickListener {
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
     private TextView error, signup_username, signup_password, signup_retypepass;
     private Button signup_confirm;
@@ -32,6 +37,8 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sign_up_fragment, container, false);
+        sp = this.getActivity().getPreferences(MODE_PRIVATE);
+        spEditor = sp.edit();
 
         this.error = view.findViewById(R.id.error_message);
         this.signup_username = view.findViewById(R.id.username);
@@ -77,7 +84,10 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                     user.setUsername(username);
                     user.setPassword(password);
                     user.save();
-                    Log.d("aeugh", "Sign up successful!");
+
+//                        this.spEditor.putBoolean("USER_LOGGED_IN", true);
+//                        spEditor.apply();
+                    fragmentListener.changePage(6);
                 }
             }
         }

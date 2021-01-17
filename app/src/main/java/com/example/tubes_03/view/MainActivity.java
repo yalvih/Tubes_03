@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.strictmode.ImplicitDirectBootViolation;
 import android.view.View;
@@ -25,6 +26,8 @@ import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener, WebserviceTask.IMainActivity {
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
     protected final int CALLER_FRAGMENT_HOME = 0;
     protected final int CALLER_FRAGMENT_DETAILS_IDN = 1;
     protected final int CALLER_FRAGMENT_DETAILS_WORLD = 2;

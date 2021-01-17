@@ -1,6 +1,7 @@
 package com.example.tubes_03.view;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +17,11 @@ import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
-public class LoginFragment extends Fragment implements View.OnClickListener{
+import static android.content.Context.MODE_PRIVATE;
+
+public class LoginFragment extends Fragment implements View.OnClickListener {
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
     private TextView error, login_username, login_password, sign_up;
     private Button login_confirm;
@@ -32,6 +37,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
+        sp = this.getActivity().getPreferences(MODE_PRIVATE);
+        spEditor = sp.edit();
 
         this.error = view.findViewById(R.id.error_message);
         this.login_username = view.findViewById(R.id.username);
@@ -82,7 +89,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                         this.error.setText(R.string.logsign_password_wrong);
                     }
                     else {
-                        Log.d("aeugh", "Login successful!");
+//                        this.spEditor.putBoolean("USER_LOGGED_IN", true);
+//                        spEditor.apply();
+                        fragmentListener.changePage(6);
                     }
                 }
             }
