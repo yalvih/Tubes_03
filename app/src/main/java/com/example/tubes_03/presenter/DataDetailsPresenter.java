@@ -39,12 +39,12 @@ public class DataDetailsPresenter {
     public void getDataIndonesia(CovidDataCountry data) {
         int sickTotal = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
         int sickInterval = data.getNewConfirmed() - data.getNewDeaths() - data.getNewRecovered();
-        this.view.updateTextViewsIndonesia(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalConfirmed(), data.getNewConfirmed());
+        this.view.updateTextViewsIndonesia(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalRecovered(), data.getNewRecovered());
     }
 
     public void getDataWorldwide(CovidDataWorldwide data) {
         int sickTotal = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
         int sickInterval = data.getNewConfirmed() - data.getNewDeaths() - data.getNewRecovered();
-//        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalConfirmed(), data.getNewConfirmed());
+//        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalRecovered(), data.getNewRecovered());
     }
 }
