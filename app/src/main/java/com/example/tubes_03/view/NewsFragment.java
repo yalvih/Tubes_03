@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-
+import com.example.tubes_03.presenter.NewsPresenter;
+//implements NewsPresenter.INewsFragment
 public class NewsFragment extends Fragment {
     private FragmentListener fragmentListener;
+//    private NewsPresenter presenter;
 
     public static NewsFragment newInstance(String title) {
         NewsFragment fragment = new NewsFragment();
@@ -24,6 +26,7 @@ public class NewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news_fragment, container, false);
+//        this.presenter = new NewsPresenter(this);
 
         return view;
     }

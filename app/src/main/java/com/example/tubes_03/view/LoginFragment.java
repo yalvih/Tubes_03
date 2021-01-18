@@ -15,14 +15,17 @@ import androidx.fragment.app.Fragment;
 import com.example.tubes_03.R;
 import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
+import com.example.tubes_03.presenter.FAQPresenter;
+import com.example.tubes_03.presenter.LoginPresenter;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import static android.content.Context.MODE_PRIVATE;
-
+// implements LoginPresenter.ILoginFragment,
 public class LoginFragment extends Fragment implements View.OnClickListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
+//    private LoginPresenter presenter;
     private TextView error, login_username, login_password, sign_up;
     private Button login_confirm;
 
@@ -39,6 +42,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
         sp = this.getActivity().getPreferences(MODE_PRIVATE);
         spEditor = sp.edit();
+//        this.presenter = new LoginPresenter(this);
 
         this.error = view.findViewById(R.id.error_message);
         this.login_username = view.findViewById(R.id.username);

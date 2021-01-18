@@ -12,17 +12,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.inputmethod.InputMethodManager;
 
-import com.example.tubes_03.WebServiceTaskHome;
 import com.example.tubes_03.R;
-import com.example.tubes_03.UIThreadedWrapperHome;
 import com.example.tubes_03.databinding.ActivityMainBinding;
 
+// implements MainActivityPresenter.IMainActivity,
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     protected final int CALLER_FRAGMENT_HOME = 0;
     protected final int CALLER_FRAGMENT_DETAILS_IDN = 1;
     protected final int CALLER_FRAGMENT_DETAILS_WORLD = 2;
+//    private MainActivityPresenter presenter;
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FragmentManager fragmentManager;
@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private FAQFragment faqFragment;
     private LoginFragment loginFragment;
     private AccountFragment accountFragment;
-    private SettingFragment settingFragment;
+    private SettingsFragment settingsFragment;
     private SignUpFragment signUpFragment;
-    private TermAndConditionFragment termAndConditionFragment;
+    private TermsAndConditionsFragment termsAndConditionsFragment;
     private ActivityMainBinding bind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        this.presenter = new MainActivityPresenter(this);
 
 //        this.setSupportActionBar(this.bind.toolbar);
 
@@ -56,9 +57,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.faqFragment = FAQFragment.newInstance("COVID Stats");
         this.loginFragment = LoginFragment.newInstance("COVID Stats");
         this.accountFragment = AccountFragment.newInstance("COVID Stats");
-        this.settingFragment = SettingFragment.newInstance("COVID Stats");
+        this.settingsFragment = SettingsFragment.newInstance("COVID Stats");
         this.signUpFragment = SignUpFragment.newInstance("COVID Stats");
-        this.termAndConditionFragment = TermAndConditionFragment.newInstance("COVID Stats");
+        this.termsAndConditionsFragment = TermsAndConditionsFragment.newInstance("COVID Stats");
 
         ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.addDrawerListener(abdt);
@@ -90,13 +91,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 ft.replace(R.id.fragment_container, this.accountFragment).addToBackStack(null);
                 break;
             case 7:
-                ft.replace(R.id.fragment_container, this.settingFragment).addToBackStack(null);
+                ft.replace(R.id.fragment_container, this.settingsFragment).addToBackStack(null);
                 break;
             case 8:
                 ft.replace(R.id.fragment_container, this.signUpFragment).addToBackStack(this.loginFragment.getClass().getName());
                 break;
             case 9:
-                ft.replace(R.id.fragment_container, this.termAndConditionFragment).addToBackStack(null);
+                ft.replace(R.id.fragment_container, this.termsAndConditionsFragment).addToBackStack(null);
                 break;
         }
         ft.commit();
