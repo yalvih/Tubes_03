@@ -15,14 +15,16 @@ import androidx.fragment.app.Fragment;
 import com.example.tubes_03.R;
 import com.example.tubes_03.model.Users;
 import com.example.tubes_03.model.Users_Table;
+import com.example.tubes_03.presenter.SignUpPresenter;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import static android.content.Context.MODE_PRIVATE;
-
+//implements SignUpPresenter.ISignUpFragment,
 public class SignUpFragment extends Fragment implements View.OnClickListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
+//    private SignUpPresenter presenter;
     private TextView error, signup_username, signup_password, signup_retypepass;
     private Button signup_confirm;
 
@@ -39,6 +41,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.sign_up_fragment, container, false);
         sp = this.getActivity().getPreferences(MODE_PRIVATE);
         spEditor = sp.edit();
+//        this.presenter = new SignUpPresenter(this);
 
         this.error = view.findViewById(R.id.error_message);
         this.signup_username = view.findViewById(R.id.username);

@@ -17,7 +17,7 @@ import com.synnapps.carouselview.ImageListener;
 
 import java.text.DecimalFormat;
 
-public class HomeFragment extends Fragment implements View.OnClickListener, HomePresenter.IHomeFragment {
+public class HomeFragment extends Fragment implements HomePresenter.IHomeFragment, View.OnClickListener {
     protected static final int FRAGMENT_CODE = 0;
     private FragmentListener fragmentListener;
     private HomePresenter presenter;

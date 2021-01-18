@@ -10,13 +10,14 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-
-public class SettingFragment extends Fragment implements View.OnClickListener{
+//implements SettingsPresenter.ISettingFragment,
+public class SettingsFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
+//    private SettingsPresenter presenter;
     TextView tnc;
 
-    public static SettingFragment newInstance(String title) {
-        SettingFragment fragment = new SettingFragment();
+    public static SettingsFragment newInstance(String title) {
+        SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
         args.putString("app_name", title);
         fragment.setArguments(args);
@@ -26,6 +27,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.setting_fragment, container, false);
+//        this.presenter = new SettingsPresenter(this);
 
         this.tnc = view.findViewById(R.id.tnc);
         this.tnc.setOnClickListener(this);

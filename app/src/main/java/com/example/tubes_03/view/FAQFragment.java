@@ -11,12 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
 import com.example.tubes_03.model.AccordionItem;
+import com.example.tubes_03.presenter.AccountPresenter;
+import com.example.tubes_03.presenter.FAQPresenter;
 import com.sysdata.widget.accordion.FancyAccordionView;
 import com.sysdata.widget.accordion.ItemAdapter;
-
+// implements FAQPresenter.IFAQFragment
 public class FAQFragment extends Fragment {
-
     private FragmentListener fragmentListener;
+//    private FAQPresenter presenter;
     Toast showToast;
 
     public static FAQFragment newInstance(String title) {
@@ -30,6 +32,7 @@ public class FAQFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.faq_fragment, container, false);
+//        this.presenter = new FAQPresenter(this);
 
         return view;
     }
