@@ -19,8 +19,8 @@ public class DataDetailsPresenter {
 
     public interface IDataDetailsFragment {
         Context getFragmentContext();
-        void updateTextViewsIndonesia(int confirmed, int death, int sick, int recovered);
-        void updateTextViewsWorldwide(int confirmed, int death, int sick, int recovered);
+        void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
+//        void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
         void initializePieChart();
         void setPieChartData(int death, int sick, int recovered);
         void setPieChartSettings();
@@ -37,12 +37,14 @@ public class DataDetailsPresenter {
     }
 
     public void getDataIndonesia(CovidDataCountry data) {
-        int totalSick = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
-        this.view.updateTextViewsIndonesia(data.getTotalConfirmed(), data.getTotalDeaths(), totalSick, data.getTotalConfirmed());
+        int sickTotal = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
+        int sickInterval = data.getNewConfirmed() - data.getNewDeaths() - data.getNewRecovered();
+        this.view.updateTextViewsIndonesia(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalConfirmed(), data.getNewConfirmed());
     }
 
     public void getDataWorldwide(CovidDataWorldwide data) {
-        int totalSick = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
-        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getTotalDeaths(), totalSick, data.getTotalConfirmed());
+        int sickTotal = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
+        int sickInterval = data.getNewConfirmed() - data.getNewDeaths() - data.getNewRecovered();
+//        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalConfirmed(), data.getNewConfirmed());
     }
 }

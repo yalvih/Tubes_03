@@ -21,7 +21,10 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
     protected static final int FRAGMENT_CODE = 0;
     private FragmentListener fragmentListener;
     private HomePresenter presenter;
-    private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
+    private TextView text_confirmed_total_id, text_death_total_id, text_sick_total_id, text_recovered_total_id,
+            text_confirmed_interval_id, text_death_interval_id, text_sick_interval_id, text_recovered_interval_id,
+            text_confirmed_total_ww, text_death_total_ww, text_sick_total_ww, text_recovered_total_ww,
+            text_confirmed_interval_ww, text_death_interval_ww, text_sick_interval_ww, text_recovered_interval_ww;
     DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
     CarouselView carouselView;
     int[] sampleImages = {
@@ -51,14 +54,22 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
         View view = inflater.inflate(R.layout.home_fragment, container, false);
         this.presenter = new HomePresenter(this);
 
-        this.text_confirmed_id = view.findViewById(R.id.indonesia_confirmed_number);
-        this.text_death_id = view.findViewById(R.id.indonesia_death_number);
-        this.text_sick_id = view.findViewById(R.id.indonesia_sick_number);
-        this.text_recovered_id = view.findViewById(R.id.indonesia_recovered_number);
-        this.text_confirmed_ww = view.findViewById(R.id.worldwide_confirmed_number);
-        this.text_death_ww = view.findViewById(R.id.worldwide_death_number);
-        this.text_sick_ww = view.findViewById(R.id.worldwide_sick_number);
-        this.text_recovered_ww = view.findViewById(R.id.worldwide_recovered_number);
+        this.text_confirmed_total_id = view.findViewById(R.id.indonesia_confirmed_number);
+        this.text_confirmed_interval_id = view.findViewById(R.id.indonesia_confirmed_interval);
+        this.text_death_total_id = view.findViewById(R.id.indonesia_death_number);
+        this.text_death_interval_id = view.findViewById(R.id.indonesia_death_interval);
+        this.text_sick_total_id = view.findViewById(R.id.indonesia_sick_number);
+        this.text_sick_interval_id = view.findViewById(R.id.indonesia_sick_interval);
+        this.text_recovered_total_id = view.findViewById(R.id.indonesia_recovered_number);
+        this.text_recovered_interval_id = view.findViewById(R.id.indonesia_recovered_interval);
+        this.text_confirmed_total_ww = view.findViewById(R.id.worldwide_confirmed_number);
+        this.text_confirmed_interval_ww = view.findViewById(R.id.worldwide_confirmed_interval);
+        this.text_death_total_ww = view.findViewById(R.id.worldwide_death_number);
+        this.text_death_interval_ww = view.findViewById(R.id.worldwide_death_interval);
+        this.text_sick_total_ww = view.findViewById(R.id.worldwide_sick_number);
+        this.text_sick_interval_ww = view.findViewById(R.id.worldwide_sick_interval);
+        this.text_recovered_total_ww = view.findViewById(R.id.worldwide_recovered_number);
+        this.text_recovered_interval_ww = view.findViewById(R.id.worldwide_recovered_interval);
 
         carouselView = view.findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
@@ -89,17 +100,34 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
         return this.getContext();
     }
 
-    public void updateTextViewsIndonesia(int confirmed, int death, int sick, int recovered) {
-        this.text_confirmed_id.setText(thousandSeparatorFormat.format(confirmed));
-        this.text_death_id.setText(thousandSeparatorFormat.format(death));
-        this.text_sick_id.setText(thousandSeparatorFormat.format(sick));
-        this.text_recovered_id.setText(thousandSeparatorFormat.format(recovered));
+    public void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval) {
+        this.text_confirmed_total_id.setText(thousandSeparatorFormat.format(confirmedTotal));
+        this.text_death_total_id.setText(thousandSeparatorFormat.format(deathTotal));
+        this.text_sick_total_id.setText(thousandSeparatorFormat.format(sickTotal));
+        this.text_recovered_total_id.setText(thousandSeparatorFormat.format(recoveredTotal));
+
+        this.text_confirmed_interval_id.setText(intervalFormatter(confirmedInterval));
+        this.text_death_interval_id.setText(intervalFormatter(deathInterval));
+        this.text_sick_interval_id.setText(intervalFormatter(sickInterval));
+        this.text_recovered_interval_id.setText(intervalFormatter(recoveredInterval));
     }
 
-    public void updateTextViewsWorldwide(int confirmed, int death, int sick, int recovered) {
-        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(confirmed));
-        this.text_death_ww.setText(thousandSeparatorFormat.format(death));
-        this.text_sick_ww.setText(thousandSeparatorFormat.format(sick));
-        this.text_recovered_ww.setText(thousandSeparatorFormat.format(recovered));
+    public void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval) {
+        this.text_confirmed_total_ww.setText(thousandSeparatorFormat.format(confirmedTotal));
+        this.text_death_total_ww.setText(thousandSeparatorFormat.format(deathTotal));
+        this.text_sick_total_ww.setText(thousandSeparatorFormat.format(sickTotal));
+        this.text_recovered_total_ww.setText(thousandSeparatorFormat.format(recoveredTotal));
+
+        this.text_confirmed_interval_ww.setText(intervalFormatter(confirmedInterval));
+        this.text_death_interval_ww.setText(intervalFormatter(deathInterval));
+        this.text_sick_interval_ww.setText(intervalFormatter(sickInterval));
+        this.text_recovered_interval_ww.setText(intervalFormatter(recoveredInterval));
+    }
+
+    public String intervalFormatter(int interval) {
+        if (interval > 0) {
+            return "+" + thousandSeparatorFormat.format(interval);
+        }
+        else return thousandSeparatorFormat.format(interval);
     }
 }
