@@ -17,6 +17,8 @@ import androidx.fragment.app.Fragment;
 import com.example.tubes_03.R;
 import com.example.tubes_03.model.CovidDataCountry;
 import com.example.tubes_03.model.CovidDataWorldwide;
+import com.example.tubes_03.presenter.DataDetailsPresenter;
+import com.example.tubes_03.presenter.HomePresenter;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -34,12 +36,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataDetailsFragment extends Fragment {
+public class DataDetailsFragment extends Fragment implements DataDetailsPresenter.IDataDetailsFragment {
     protected static final int FRAGMENT_CODE = 1;
     private FragmentListener fragmentListener;
+    private DataDetailsPresenter presenter;
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
     private PieChart dataChart;
     private TypedValue textColor;
+    DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
 
     public static DataDetailsFragment newInstance(String title) {
         DataDetailsFragment fragment = new DataDetailsFragment();
@@ -52,6 +56,7 @@ public class DataDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.data_details_fragment, container, false);
+        this.presenter = new DataDetailsPresenter(this);
 
         this.textColor = new TypedValue();
         getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, this.textColor, true);
@@ -67,7 +72,7 @@ public class DataDetailsFragment extends Fragment {
         this.dataChart = view.findViewById(R.id.details_chart);
 
         initializePieChart();
-        this.fragmentListener.loadData(FRAGMENT_CODE);
+        this.presenter.loadDataIndonesia();
         setPieChartSettings();
 
         return view;
@@ -84,34 +89,26 @@ public class DataDetailsFragment extends Fragment {
         }
     }
 
-    public void updateTextViewsIndonesia(CovidDataCountry data) {
-        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalConfirmed = data.getTotalConfirmed();
-        int totalDeaths = data.getTotalDeaths();
-        int totalRecovered = data.getTotalRecovered();
-        int totalSick = totalConfirmed - totalDeaths - totalRecovered;
-
-        this.text_confirmed_id.setText(thousandSeparatorFormat.format(totalConfirmed));
-        this.text_death_id.setText(thousandSeparatorFormat.format(totalDeaths));
-        this.text_sick_id.setText(thousandSeparatorFormat.format(totalSick));
-        this.text_recovered_id.setText(thousandSeparatorFormat.format(totalRecovered));
-
-        setPieChartData(totalDeaths, totalSick, totalRecovered);
+    public Context getFragmentContext() {
+        return this.getContext();
     }
 
-    public void updateTextViewsWorldwide(CovidDataWorldwide data) {
-        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalConfirmed = data.getTotalConfirmed();
-        int totalDeaths = data.getTotalDeaths();
-        int totalRecovered = data.getTotalRecovered();
-        int totalSick = totalConfirmed - totalDeaths - totalRecovered;
+    public void updateTextViewsIndonesia(int confirmed, int death, int sick, int recovered) {
+        this.text_confirmed_id.setText(thousandSeparatorFormat.format(confirmed));
+        this.text_death_id.setText(thousandSeparatorFormat.format(death));
+        this.text_sick_id.setText(thousandSeparatorFormat.format(sick));
+        this.text_recovered_id.setText(thousandSeparatorFormat.format(recovered));
 
-        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(totalConfirmed));
-        this.text_death_ww.setText(thousandSeparatorFormat.format(totalDeaths));
-        this.text_sick_ww.setText(thousandSeparatorFormat.format(totalSick));
-        this.text_recovered_ww.setText(thousandSeparatorFormat.format(totalRecovered));
+        setPieChartData(death, sick, recovered);
+    }
 
-        setPieChartData(totalDeaths, totalSick, totalRecovered);
+    public void updateTextViewsWorldwide(int confirmed, int death, int sick, int recovered) {
+        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(confirmed));
+        this.text_death_ww.setText(thousandSeparatorFormat.format(death));
+        this.text_sick_ww.setText(thousandSeparatorFormat.format(sick));
+        this.text_recovered_ww.setText(thousandSeparatorFormat.format(recovered));
+
+        setPieChartData(death, sick, recovered);
     }
 
     public void initializePieChart() {

@@ -10,22 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.strictmode.ImplicitDirectBootViolation;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ImageView;
 
-import com.example.tubes_03.DBCovidStats;
-import com.example.tubes_03.WebserviceTask;
+import com.example.tubes_03.WebServiceTaskHome;
 import com.example.tubes_03.R;
-import com.example.tubes_03.UIThreadedWrapper;
+import com.example.tubes_03.UIThreadedWrapperHome;
 import com.example.tubes_03.databinding.ActivityMainBinding;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener, WebserviceTask.IMainActivity {
+public class MainActivity extends AppCompatActivity implements FragmentListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     protected final int CALLER_FRAGMENT_HOME = 0;
@@ -44,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     private SettingFragment settingFragment;
     private SignUpFragment signUpFragment;
     private TermAndConditionFragment termAndConditionFragment;
-    private UIThreadedWrapper uiThreadedWrapper;
-    private WebserviceTask dataInitializer;
     private ActivityMainBinding bind;
 
     @Override
@@ -74,24 +64,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        this.uiThreadedWrapper = new UIThreadedWrapper(homeFragment, dataDetailsFragment);
-        this.dataInitializer = new WebserviceTask(this, this.uiThreadedWrapper);
-
         changePage(1);
-    }
-
-    @Override
-    public void loadData(int fragmentCode) {
-        if (fragmentCode == CALLER_FRAGMENT_DETAILS_IDN) {
-            this.dataInitializer.executeIndonesia(fragmentCode);
-        }
-        else if (fragmentCode == CALLER_FRAGMENT_DETAILS_WORLD) {
-            this.dataInitializer.executeWorldwide(fragmentCode);
-        }
-        else {
-            this.dataInitializer.executeIndonesia(fragmentCode);
-            this.dataInitializer.executeWorldwide(fragmentCode);
-        }
     }
 
     @Override
@@ -139,6 +112,4 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.finish();
         this.drawer.closeDrawers();
     }
-
-
 }

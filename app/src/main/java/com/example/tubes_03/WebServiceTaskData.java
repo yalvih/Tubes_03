@@ -7,51 +7,33 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tubes_03.model.CovidDataCountry;
-import com.example.tubes_03.model.CovidDataWorldwide;
 import com.example.tubes_03.model.CovidSummaryResponse;
 import com.google.gson.ExclusionStrategy;
-import com.google.gson.FieldAttributes;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import com.raizlabs.android.dbflow.config.FlowManager;
-import com.raizlabs.android.dbflow.structure.database.DatabaseWrapper;
-import com.raizlabs.android.dbflow.structure.database.transaction.ProcessModelTransaction;
-import com.raizlabs.android.dbflow.structure.database.transaction.Transaction;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
-public class WebserviceTask {
+public class WebServiceTaskData {
     private final String URL = "https://api.covid19api.com/summary";
     private Context context;
     private GsonBuilder gson;
-    private UIThreadedWrapper uiThreadedWrapper;
+    private UIThreadedWrapperData uiThreadedWrapperData;
     private int fragmentCode;
 
-    public interface IMainActivity {
-        void changePage(int page);
-        void closeApplication();
-    }
-
-    public WebserviceTask(Context context, UIThreadedWrapper uiThreadedWrapper) {
+    public WebServiceTaskData(Context context, UIThreadedWrapperData uiThreadedWrapperData) {
         this.context = context;
-        this.uiThreadedWrapper = uiThreadedWrapper;
+        this.uiThreadedWrapperData = uiThreadedWrapperData;
         this.gson = new GsonBuilder().setExclusionStrategies(new ExclusionStrategy[] {new DBFlowGsonExclusion()});
     }
 
-    public void executeWorldwide(int fragmentCode) {
-        this.fragmentCode = fragmentCode;
+    public void executeWorldwide() {
         this.callVolley(0);
     }
 
-    public void executeIndonesia(int fragmentCode) {
-        this.fragmentCode = fragmentCode;
+    public void executeIndonesia() {
         this.callVolley(1);
     }
 
@@ -78,7 +60,7 @@ public class WebserviceTask {
     public void processResultWorldwide(String response) {
         CovidSummaryResponse data = gson.create().fromJson(response, CovidSummaryResponse.class);
 
-        uiThreadedWrapper.sendResultWorldwide(data.getGlobal(), fragmentCode);
+        uiThreadedWrapperData.sendResultWorldwide(data.getGlobal());
     }
 
     public void processResultIndonesia(String response) {
@@ -92,6 +74,6 @@ public class WebserviceTask {
             }
         }
 
-        uiThreadedWrapper.sendResultIndonesia(dataIDN, fragmentCode);
+        uiThreadedWrapperData.sendResultIndonesia(dataIDN);
     }
 }

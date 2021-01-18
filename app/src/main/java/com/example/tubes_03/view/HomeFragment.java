@@ -1,30 +1,28 @@
 package com.example.tubes_03.view;
 
 import android.content.Context;
-import android.graphics.Outline;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-import com.example.tubes_03.model.CovidDataCountry;
-import com.example.tubes_03.model.CovidDataWorldwide;
+import com.example.tubes_03.presenter.HomePresenter;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 import java.text.DecimalFormat;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener, HomePresenter.IHomeFragment {
     protected static final int FRAGMENT_CODE = 0;
     private FragmentListener fragmentListener;
+    private HomePresenter presenter;
     private TextView text_confirmed_id, text_death_id, text_sick_id, text_recovered_id, text_confirmed_ww, text_death_ww, text_sick_ww, text_recovered_ww;
+    DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
     CarouselView carouselView;
     int[] sampleImages = {
             R.drawable.carousel_1,
@@ -32,6 +30,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             R.drawable.carousel_3,
             R.drawable.carousel_4,
             R.drawable.carousel_5
+    };
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
     };
 
     public static HomeFragment newInstance(String title) {
@@ -45,6 +49,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
+        this.presenter = new HomePresenter(this);
 
         this.text_confirmed_id = view.findViewById(R.id.indonesia_confirmed_number);
         this.text_death_id = view.findViewById(R.id.indonesia_death_number);
@@ -59,7 +64,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imageListener);
 
-        this.fragmentListener.loadData(FRAGMENT_CODE);
+        this.presenter.loadData();
 
         return view;
     }
@@ -80,30 +85,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void updateTextViewsIndonesia(CovidDataCountry data) {
-        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalSick = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
-
-        this.text_confirmed_id.setText(thousandSeparatorFormat.format(data.getTotalConfirmed()));
-        this.text_death_id.setText(thousandSeparatorFormat.format(data.getTotalDeaths()));
-        this.text_sick_id.setText(thousandSeparatorFormat.format(totalSick));
-        this.text_recovered_id.setText(thousandSeparatorFormat.format(data.getTotalRecovered()));
+    public Context getFragmentContext() {
+        return this.getContext();
     }
 
-    public void updateTextViewsWorldwide(CovidDataWorldwide data) {
-        DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
-        int totalSick = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
-
-        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(data.getTotalConfirmed()));
-        this.text_death_ww.setText(thousandSeparatorFormat.format(data.getTotalDeaths()));
-        this.text_sick_ww.setText(thousandSeparatorFormat.format(totalSick));
-        this.text_recovered_ww.setText(thousandSeparatorFormat.format(data.getTotalRecovered()));
+    public void updateTextViewsIndonesia(int confirmed, int death, int sick, int recovered) {
+        this.text_confirmed_id.setText(thousandSeparatorFormat.format(confirmed));
+        this.text_death_id.setText(thousandSeparatorFormat.format(death));
+        this.text_sick_id.setText(thousandSeparatorFormat.format(sick));
+        this.text_recovered_id.setText(thousandSeparatorFormat.format(recovered));
     }
 
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages[position]);
-        }
-    };
+    public void updateTextViewsWorldwide(int confirmed, int death, int sick, int recovered) {
+        this.text_confirmed_ww.setText(thousandSeparatorFormat.format(confirmed));
+        this.text_death_ww.setText(thousandSeparatorFormat.format(death));
+        this.text_sick_ww.setText(thousandSeparatorFormat.format(sick));
+        this.text_recovered_ww.setText(thousandSeparatorFormat.format(recovered));
+    }
 }

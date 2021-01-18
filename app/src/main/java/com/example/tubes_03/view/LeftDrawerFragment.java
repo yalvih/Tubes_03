@@ -34,7 +34,7 @@ public class LeftDrawerFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_left, container, false);
-        sp = this.getActivity().getPreferences(MODE_PRIVATE);
+        this.sp = this.getActivity().getPreferences(MODE_PRIVATE);
         this.userLoggedIn = this.sp.getBoolean("USER_LOGGED_IN", false);
 
         this.home = view.findViewById(R.id.drawer_home);
