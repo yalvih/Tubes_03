@@ -16,7 +16,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="310dp"
                 android:layout_gravity="center"
                 android:orientation="vertical"
 
@@ -28,43 +28,63 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/data_corona_indonesia"
                     android:textStyle="bold"
-                    android:padding="10dp"
                     android:fontFamily="@font/google_font_normal"
+                    android:padding="10dp"
                     android:textSize="25sp">
                 </TextView>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/google_font_normal"
-                    android:text="@string/terkonfirmasi"
-                    android:textSize="20sp"
-                    android:textStyle="bold">
-                </TextView>
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/google_font_normal"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/data_loading_placeholder"
-                    android:textSize="20sp"
-                    android:id="@+id/indonesia_confirmed_number">
-                </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/terkonfirmasi"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/google_font_normal"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/data_loading_placeholder"
+                        android:textSize="20sp"
+                        android:id="@+id/indonesia_confirmed_number">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/data_loading_placeholder"
+                        android:textSize="16sp"
+                        android:id="@+id/indonesia_confirmed_interval">
+                    </TextView>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_margin="3dp"
                         android:paddingBottom="10dp"
+                        android:layout_margin="3dp"
                         android:orientation="vertical">
 
                         <ImageView
@@ -73,9 +93,8 @@
                             android:layout_gravity="center"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
-                            app:tint="@color/red"
-                            android:src="@drawable/ic_baseline_emoji_people_24">
-
+                            android:src="@drawable/ic_baseline_emoji_people_24"
+                            app:tint="@color/red">
                         </ImageView>
 
                         <TextView
@@ -84,7 +103,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/meninggal"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            >
 
                         </TextView>
 
@@ -98,6 +118,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_death_interval"
+                            />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -105,8 +135,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
+
                         android:layout_margin="3dp"
-                        android:fontFamily="@font/google_font_normal"
                         android:orientation="vertical">
 
                         <ImageView
@@ -140,14 +170,23 @@
 
                         </TextView>
 
-                    </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_sick_interval"
+                            />
 
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_margin="3dp"
                         android:paddingBottom="10dp"
+                        android:layout_margin="3dp"
                         android:orientation="vertical">
 
                         <ImageView
@@ -156,9 +195,8 @@
                             android:layout_gravity="center"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
-                            app:tint="@color/green"
-                            android:src="@drawable/ic_baseline_emoji_people_24">
-
+                            android:src="@drawable/ic_baseline_emoji_people_24"
+                            app:tint="@color/green">
                         </ImageView>
 
                         <TextView
@@ -181,40 +219,19 @@
 
                         </TextView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_recovered_interval"
+                            />
+
                     </LinearLayout>
 
-
-                    <!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
-                    <!--                        android:id="@+id/carddemo4"-->
-                    <!--                        android:layout_width="100dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_marginLeft="12dp"-->
-                    <!--                        android:layout_marginRight="12dp"-->
-                    <!--                        android:layout_marginTop="12dp"-->
-                    <!--                        />-->
-
-                    <!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
-                    <!--                        android:id="@+id/carddemo5"-->
-                    <!--                        android:layout_width="100dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_marginLeft="12dp"-->
-                    <!--                        android:layout_marginRight="12dp"-->
-                    <!--                        android:layout_marginTop="12dp"-->
-                    <!--                        />-->
-
-                    <!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
-                    <!--                        android:id="@+id/carddemo6"-->
-                    <!--                        android:layout_width="100dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_marginLeft="12dp"-->
-                    <!--                        android:layout_marginRight="12dp"-->
-                    <!--                        android:layout_marginTop="12dp"-->
-                    <!--                        />-->
-
                 </LinearLayout>
-
-
-
             </LinearLayout>
 
             <TextView
@@ -237,7 +254,7 @@
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/details_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="350dp"
                     />
 
                 <!--            <ImageView-->

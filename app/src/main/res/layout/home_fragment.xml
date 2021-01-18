@@ -49,7 +49,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="310dp"
                 android:layout_gravity="center"
                 android:orientation="vertical"
 
@@ -91,6 +91,16 @@
                         android:text="@string/data_loading_placeholder"
                         android:textSize="20sp"
                         android:id="@+id/indonesia_confirmed_number">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/data_loading_placeholder"
+                        android:textSize="16sp"
+                        android:id="@+id/indonesia_confirmed_interval">
                     </TextView>
 
                 </LinearLayout>
@@ -141,6 +151,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_death_interval"
+                            />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -183,6 +203,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_sick_interval"
+                            />
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -222,6 +252,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            android:id="@+id/indonesia_recovered_interval"
+                            />
+
                     </LinearLayout>
 <!--                    <it.gmariotti.cardslib.library.view.CardViewNative-->
 <!--                        android:id="@+id/carddemo"-->
@@ -255,7 +295,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="310dp"
                 android:layout_gravity="center"
                 android:orientation="vertical"
 
@@ -271,23 +311,42 @@
                     android:textStyle="bold"
                     android:textSize="25sp"></TextView>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/google_font_normal"
-                    android:text="@string/terkonfirmasi"
-                    android:textStyle="bold"
-                    android:textSize="20sp"></TextView>
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/worldwide_confirmed_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/google_font_normal"
-                    android:text="@string/data_loading_placeholder"
-                    android:textSize="20sp"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/terkonfirmasi"
+                        android:textStyle="bold"
+                        android:textSize="20sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/worldwide_confirmed_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/data_loading_placeholder"
+                        android:textSize="20sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/google_font_normal"
+                        android:text="@string/data_loading_placeholder"
+                        android:textSize="16sp"
+                        android:id="@+id/worldwide_confirmed_interval">
+                    </TextView>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -334,6 +393,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:id="@+id/worldwide_death_interval"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -376,6 +445,16 @@
 
                         </TextView>
 
+                        <TextView
+                            android:id="@+id/worldwide_sick_interval"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -416,6 +495,16 @@
                             android:text="@string/data_loading_placeholder">
 
                         </TextView>
+
+                        <TextView
+                            android:id="@+id/worldwide_recovered_interval"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/google_font_normal"
+                            android:text="@string/data_loading_placeholder"
+                            android:textSize="11sp"
+                            />
 
                     </LinearLayout>
 
