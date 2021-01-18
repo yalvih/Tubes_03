@@ -11,9 +11,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ListView;
 
 import com.example.tubes_03.R;
 import com.example.tubes_03.databinding.ActivityMainBinding;
+import com.example.tubes_03.model.News;
+import com.example.tubes_03.presenter.NewsPresenter;
+
+import java.util.List;
 
 // implements MainActivityPresenter.IMainActivity,
 public class MainActivity extends AppCompatActivity implements FragmentListener {
@@ -37,6 +42,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private SignUpFragment signUpFragment;
     private TermsAndConditionsFragment termsAndConditionsFragment;
     private ActivityMainBinding bind;
+    private NewsPresenter present;
+    private ListView lstNews;
+    private MockNewsAdapter adapter;
+    private NewsPresenter.INewsFragment InewsFragment;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.settingsFragment = SettingsFragment.newInstance("COVID Stats");
         this.signUpFragment = SignUpFragment.newInstance("COVID Stats");
         this.termsAndConditionsFragment = TermsAndConditionsFragment.newInstance("COVID Stats");
+
+
 
         ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.addDrawerListener(abdt);
@@ -127,4 +140,5 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.finish();
         this.drawer.closeDrawers();
     }
+
 }
