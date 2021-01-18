@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sp = this.getPreferences(MODE_PRIVATE);
+        spEditor = sp.edit();
+
+
 //        this.presenter = new MainActivityPresenter(this);
 
 //        this.setSupportActionBar(this.bind.toolbar);
@@ -65,7 +69,17 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        changePage(1);
+        if (sp.getBoolean("USER_JUST_LOGGED_IN", false)) {
+            changePage(6);
+            this.spEditor.putBoolean("USER_JUST_LOGGED_IN", false);
+            spEditor.apply();
+        }
+        else if (sp.getBoolean("USER_JUST_LOGGED_OUT", false)) {
+            changePage(5);
+            this.spEditor.putBoolean("USER_JUST_LOGGED_OUT", false);
+            spEditor.apply();
+        }
+        else changePage(1);
     }
 
     @Override

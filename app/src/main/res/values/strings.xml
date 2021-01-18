@@ -47,4 +47,5 @@ In pellentesque est ut tellus interdum accumsan. Donec dignissim leo sed ipsum m
     <string name="logsign_password_empty">Password kosong!</string>
     <string name="logsign_password_wrong">Password salah. Silahkan ketik ulang password.</string>
     <string name="logsign_password_nomatch">Password yang diketik ulang tidak sesuai!</string>
+    <string name="logsign_user_exists">Username sudah terpakai. Silahkan coba username lain.</string>
 </resources>

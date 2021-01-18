@@ -1,5 +1,6 @@
 package com.example.tubes_03.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,12 +21,12 @@ import com.example.tubes_03.presenter.LoginPresenter;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import static android.content.Context.MODE_PRIVATE;
-// implements LoginPresenter.ILoginFragment,
-public class LoginFragment extends Fragment implements View.OnClickListener {
+
+public class LoginFragment extends Fragment implements LoginPresenter.ILoginFragment, View.OnClickListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
-//    private LoginPresenter presenter;
+    private LoginPresenter presenter;
     private TextView error, login_username, login_password, sign_up;
     private Button login_confirm;
 
@@ -42,7 +43,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
         sp = this.getActivity().getPreferences(MODE_PRIVATE);
         spEditor = sp.edit();
-//        this.presenter = new LoginPresenter(this);
+        this.presenter = new LoginPresenter(this);
 
         this.error = view.findViewById(R.id.error_message);
         this.login_username = view.findViewById(R.id.username);
@@ -72,36 +73,40 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (v == login_confirm) {
             String username = this.login_username.getText().toString();
             String password = this.login_password.getText().toString();
-
-            if (username.length() == 0) {
-                this.error.setText(R.string.logsign_user_empty);
-            }
-            else if (password.length() == 0) {
-                this.error.setText(R.string.logsign_password_empty);
-            }
-            else {
-                Users currentUser = SQLite.select().
-                        from(Users.class).
-                        where(Users_Table.username.eq(username)).
-                        querySingle();
-
-                if (currentUser == null) {
-                    this.error.setText(R.string.logsign_user_nomatch);
-                }
-                else {
-                    if (!currentUser.getPassword().equals(password)) {
-                        this.error.setText(R.string.logsign_password_wrong);
-                    }
-                    else {
-//                        this.spEditor.putBoolean("USER_LOGGED_IN", true);
-//                        spEditor.apply();
-                        fragmentListener.changePage(6);
-                    }
-                }
-            }
+            this.presenter.login(username, password);
         }
         else if (v == sign_up) {
-            this.fragmentListener.changePage(8);
+            fragmentListener.changePage(8);
         }
+    }
+
+    public Activity getFragmentActivity() {
+        return this.getActivity();
+    }
+
+    public void loginError(int errorCode) {
+//        0 = empty username
+//        1 = empty password
+//        2 = no matching user
+//        3 = wrong password
+        switch (errorCode) {
+            case 0:
+                this.error.setText(R.string.logsign_user_empty);
+                break;
+            case 1:
+                this.error.setText(R.string.logsign_password_empty);
+                break;
+            case 2:
+                this.error.setText(R.string.logsign_user_nomatch);
+                break;
+            case 3:
+                this.error.setText(R.string.logsign_password_wrong);
+                break;
+        }
+    }
+
+    public void clearInputFields() {
+        this.login_username.setText("");
+        this.login_password.setText("");
     }
 }

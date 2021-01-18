@@ -40,13 +40,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/account_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:text="<Insert Name Here>"
+                        android:text="Insert Name Here"
                         android:fontFamily="@font/google_font_normal"
-                        android:textSize="20sp">
-                    </TextView>
+                        android:textSize="20sp"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -63,21 +64,21 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/account_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:text="<Insert Status Here>"
+                        android:text="Insert Status Here"
                         android:fontFamily="@font/google_font_normal"
-                        android:textSize="20sp">
-                    </TextView>
+                        android:textSize="20sp"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
                         android:fontFamily="@font/google_font_normal"
-                        android:textSize="20sp">
-                    </TextView>
+                        android:textSize="20sp"/>
 
                 </LinearLayout>
                 <TextView
@@ -95,6 +96,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/account_edit_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
@@ -114,6 +116,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/account_sign_out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
