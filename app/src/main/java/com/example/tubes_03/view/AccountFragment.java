@@ -46,14 +46,14 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
 
         this.username = view.findViewById(R.id.account_username);
         this.status = view.findViewById(R.id.account_status);
-        this.editName = view.findViewById(R.id.account_edit_name);
+//        this.editName = view.findViewById(R.id.account_edit_name);
         this.signout = view.findViewById(R.id.account_sign_out);
 
         this.signout.setOnClickListener(this);
 
-        Button button = view.findViewById(R.id.test_covid);
+        this.test_covid = view.findViewById(R.id.test_covid);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        this.test_covid.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent viewIntent =
                         new Intent("android.intent.action.VIEW",
