@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textSize="17dp"
+        android:height="100px"
         android:textColor="?attr/textColor"
         android:fontFamily="@font/google_font_normal"/>
 
