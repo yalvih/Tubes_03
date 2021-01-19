@@ -1,6 +1,7 @@
 package com.example.tubes_03.presenter;
 
 import android.content.Context;
+import android.widget.TextView;
 
 import com.example.tubes_03.UIThreadedWrapperData;
 import com.example.tubes_03.WebServiceTaskData;
@@ -20,9 +21,10 @@ public class DataDetailsPresenter {
     public interface IDataDetailsFragment {
         Context getFragmentContext();
         void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
-//        void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
+        void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
         String intervalFormatter(int interval);
         int intervalColorPicker(int interval);
+        void dataModeSetUnpicked(TextView dataPicker);
         void initializePieChart();
         void setPieChartData(int death, int sick, int recovered);
         void setPieChartSettings();
@@ -47,6 +49,6 @@ public class DataDetailsPresenter {
     public void getDataWorldwide(CovidDataWorldwide data) {
         int sickTotal = data.getTotalConfirmed() - data.getTotalDeaths() - data.getTotalRecovered();
         int sickInterval = data.getNewConfirmed() - data.getNewDeaths() - data.getNewRecovered();
-//        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalRecovered(), data.getNewRecovered());
+        this.view.updateTextViewsWorldwide(data.getTotalConfirmed(), data.getNewConfirmed(), data.getTotalDeaths(), data.getNewDeaths(), sickTotal, sickInterval, data.getTotalRecovered(), data.getNewRecovered());
     }
 }

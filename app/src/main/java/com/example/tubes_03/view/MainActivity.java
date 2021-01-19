@@ -16,10 +16,7 @@ import android.widget.ListView;
 import com.example.tubes_03.R;
 import com.example.tubes_03.Utils;
 import com.example.tubes_03.databinding.ActivityMainBinding;
-import com.example.tubes_03.model.News;
 import com.example.tubes_03.presenter.NewsPresenter;
-
-import java.util.List;
 
 // implements MainActivityPresenter.IMainActivity,
 public class MainActivity extends AppCompatActivity implements FragmentListener {
@@ -95,6 +92,19 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
+    public void changeTheme(int theme) {
+        if (theme == 1) {
+            Utils.changeToTheme(this, Utils.THEME_LIGHT);
+        }
+        else if (theme == 2) {
+            Utils.changeToTheme(this, Utils.THEME_DARK);
+        }
+        else {
+            Utils.changeToTheme(this, Utils.THEME_UNSET);
+        }
+    }
+
+    @Override
     public void changePage(int page) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         switch (page) {
@@ -139,18 +149,4 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.finish();
         this.drawer.closeDrawers();
     }
-
-    @Override
-    public void changeTheme(int theme) {
-        if (theme == 1) {
-            Utils.changeToTheme(this, Utils.THEME_LIGHT);
-        }
-        else if (theme == 2) {
-            Utils.changeToTheme(this, Utils.THEME_DARK);
-        }
-        else {
-            Utils.changeToTheme(this, Utils.THEME_UNSET);
-        }
-    }
-
 }

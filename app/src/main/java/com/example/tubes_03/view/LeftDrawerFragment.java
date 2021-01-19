@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
@@ -69,11 +70,11 @@ public class LeftDrawerFragment extends Fragment implements View.OnClickListener
 
         if (userLoggedIn) {
             this.login.setText("My Account");
-            this.loginIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_my_account_24));
+            this.loginIcon.setImageDrawable(ContextCompat.getDrawable(this.getActivity(), R.drawable.ic_baseline_my_account_24));
         }
         else {
             this.login.setText("Login");
-            this.loginIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_login_24));
+            this.loginIcon.setImageDrawable(ContextCompat.getDrawable(this.getActivity(), R.drawable.ic_baseline_login_24));
         }
 
         return view;

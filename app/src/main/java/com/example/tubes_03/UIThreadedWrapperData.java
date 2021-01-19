@@ -6,8 +6,6 @@ import android.os.Message;
 import com.example.tubes_03.model.CovidDataCountry;
 import com.example.tubes_03.model.CovidDataWorldwide;
 import com.example.tubes_03.presenter.DataDetailsPresenter;
-import com.example.tubes_03.presenter.HomePresenter;
-import com.example.tubes_03.view.DataDetailsFragment;
 import com.example.tubes_03.view.MainActivity;
 
 public class UIThreadedWrapperData extends Handler {
