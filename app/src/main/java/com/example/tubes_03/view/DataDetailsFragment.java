@@ -35,9 +35,9 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
     SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
     private DataDetailsPresenter presenter;
-    private TextView title, dataPicker_id, dataPicker_ww,
-            text_confirmed_total_id, text_death_total_id, text_sick_total_id, text_recovered_total_id,
-            text_confirmed_interval_id, text_death_interval_id, text_sick_interval_id, text_recovered_interval_id;
+    private TextView title, dataPicker, dataPicker_ww,
+            text_confirmed_total, text_death_total, text_sick_total, text_recovered_total,
+            text_confirmed_interval, text_death_interval, text_sick_interval, text_recovered_interval;
     private PieChart dataChart;
     private TypedValue valueTextColor;
     DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
@@ -65,16 +65,16 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         getContext().getTheme().resolveAttribute(R.attr.textColor, this.valueTextColor, true);
 
         this.title = view.findViewById(R.id.data_title);
-        this.dataPicker_id = view.findViewById(R.id.data_picker_id);
+        this.dataPicker = view.findViewById(R.id.data_picker_id);
         this.dataPicker_ww = view.findViewById(R.id.data_picker_ww);
-        this.text_confirmed_total_id = view.findViewById(R.id.indonesia_confirmed_number);
-        this.text_confirmed_interval_id = view.findViewById(R.id.indonesia_confirmed_interval);
-        this.text_death_total_id = view.findViewById(R.id.indonesia_death_number);
-        this.text_death_interval_id = view.findViewById(R.id.indonesia_death_interval);
-        this.text_sick_total_id = view.findViewById(R.id.indonesia_sick_number);
-        this.text_sick_interval_id = view.findViewById(R.id.indonesia_sick_interval);
-        this.text_recovered_total_id = view.findViewById(R.id.indonesia_recovered_number);
-        this.text_recovered_interval_id = view.findViewById(R.id.indonesia_recovered_interval);
+        this.text_confirmed_total = view.findViewById(R.id.confirmed_number);
+        this.text_confirmed_interval = view.findViewById(R.id.confirmed_interval);
+        this.text_death_total = view.findViewById(R.id.death_number);
+        this.text_death_interval = view.findViewById(R.id.death_interval);
+        this.text_sick_total = view.findViewById(R.id.sick_number);
+        this.text_sick_interval = view.findViewById(R.id.sick_interval);
+        this.text_recovered_total = view.findViewById(R.id.recovered_number);
+        this.text_recovered_interval = view.findViewById(R.id.recovered_interval);
         this.dataChart = view.findViewById(R.id.details_chart);
 
         initializePieChart();
@@ -87,12 +87,12 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         }
         else {
             this.title.setText("DATA CORONA DUNIA");
-            dataModeSetUnpicked(this.dataPicker_id);
+            dataModeSetUnpicked(this.dataPicker);
             this.presenter.loadDataWorldwide();
         }
         setPieChartSettings();
 
-        this.dataPicker_id.setOnClickListener(this);
+        this.dataPicker.setOnClickListener(this);
         this.dataPicker_ww.setOnClickListener(this);
 
         return view;
@@ -111,7 +111,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
 
     @Override
     public void onClick(View v) {
-        if (v == this.dataPicker_id && this.fragmentCode != FRAGMENT_DATA_INDONESIA) {
+        if (v == this.dataPicker && this.fragmentCode != FRAGMENT_DATA_INDONESIA) {
             this.spEditor.putInt("DATA_FRAGMENT_PICKED", FRAGMENT_DATA_INDONESIA);
             spEditor.apply();
             fragmentListener.changePage(1);
@@ -130,39 +130,39 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
     }
 
     public void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval) {
-        this.text_confirmed_total_id.setText(thousandSeparatorFormat.format(confirmedTotal));
-        this.text_death_total_id.setText(thousandSeparatorFormat.format(deathTotal));
-        this.text_sick_total_id.setText(thousandSeparatorFormat.format(sickTotal));
-        this.text_recovered_total_id.setText(thousandSeparatorFormat.format(recoveredTotal));
+        this.text_confirmed_total.setText(thousandSeparatorFormat.format(confirmedTotal));
+        this.text_death_total.setText(thousandSeparatorFormat.format(deathTotal));
+        this.text_sick_total.setText(thousandSeparatorFormat.format(sickTotal));
+        this.text_recovered_total.setText(thousandSeparatorFormat.format(recoveredTotal));
 
-        this.text_confirmed_interval_id.setText(intervalFormatter(confirmedInterval));
-        this.text_death_interval_id.setText(intervalFormatter(deathInterval));
-        this.text_sick_interval_id.setText(intervalFormatter(sickInterval));
-        this.text_recovered_interval_id.setText(intervalFormatter(recoveredInterval));
+        this.text_confirmed_interval.setText(intervalFormatter(confirmedInterval));
+        this.text_death_interval.setText(intervalFormatter(deathInterval));
+        this.text_sick_interval.setText(intervalFormatter(sickInterval));
+        this.text_recovered_interval.setText(intervalFormatter(recoveredInterval));
 
-        this.text_confirmed_interval_id.setTextColor(intervalColorPicker(confirmedInterval));
-        this.text_death_interval_id.setTextColor(intervalColorPicker(deathInterval));
-        this.text_sick_interval_id.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval_id.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_confirmed_interval.setTextColor(intervalColorPicker(confirmedInterval));
+        this.text_death_interval.setTextColor(intervalColorPicker(deathInterval));
+        this.text_sick_interval.setTextColor(intervalColorPicker(sickInterval));
+        this.text_recovered_interval.setTextColor(intervalColorPicker(recoveredInterval));
 
         setPieChartData(deathTotal, sickTotal, recoveredTotal);
     }
 
     public void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval) {
-        this.text_confirmed_total_id.setText(thousandSeparatorFormat.format(confirmedTotal));
-        this.text_death_total_id.setText(thousandSeparatorFormat.format(deathTotal));
-        this.text_sick_total_id.setText(thousandSeparatorFormat.format(sickTotal));
-        this.text_recovered_total_id.setText(thousandSeparatorFormat.format(recoveredTotal));
+        this.text_confirmed_total.setText(thousandSeparatorFormat.format(confirmedTotal));
+        this.text_death_total.setText(thousandSeparatorFormat.format(deathTotal));
+        this.text_sick_total.setText(thousandSeparatorFormat.format(sickTotal));
+        this.text_recovered_total.setText(thousandSeparatorFormat.format(recoveredTotal));
 
-        this.text_confirmed_interval_id.setText(intervalFormatter(confirmedInterval));
-        this.text_death_interval_id.setText(intervalFormatter(deathInterval));
-        this.text_sick_interval_id.setText(intervalFormatter(sickInterval));
-        this.text_recovered_interval_id.setText(intervalFormatter(recoveredInterval));
+        this.text_confirmed_interval.setText(intervalFormatter(confirmedInterval));
+        this.text_death_interval.setText(intervalFormatter(deathInterval));
+        this.text_sick_interval.setText(intervalFormatter(sickInterval));
+        this.text_recovered_interval.setText(intervalFormatter(recoveredInterval));
 
-        this.text_confirmed_interval_id.setTextColor(intervalColorPicker(confirmedInterval));
-        this.text_death_interval_id.setTextColor(intervalColorPicker(deathInterval));
-        this.text_sick_interval_id.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval_id.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_confirmed_interval.setTextColor(intervalColorPicker(confirmedInterval));
+        this.text_death_interval.setTextColor(intervalColorPicker(deathInterval));
+        this.text_sick_interval.setTextColor(intervalColorPicker(sickInterval));
+        this.text_recovered_interval.setTextColor(intervalColorPicker(recoveredInterval));
 
         setPieChartData(deathTotal, sickTotal, recoveredTotal);
     }

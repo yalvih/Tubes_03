@@ -102,7 +102,7 @@
                         android:text="@string/data_loading_placeholder"
                         android:textSize="20sp"
                         android:textColor="?attr/textColor"
-                        android:id="@+id/indonesia_confirmed_number">
+                        android:id="@+id/confirmed_number">
                     </TextView>
 
                     <TextView
@@ -113,7 +113,7 @@
                         android:text="@string/data_loading_placeholder"
                         android:textSize="16sp"
                         android:textColor="?attr/textColor"
-                        android:id="@+id/indonesia_confirmed_interval">
+                        android:id="@+id/confirmed_interval">
                     </TextView>
 
                 </LinearLayout>
@@ -162,7 +162,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_death_number">
+                            android:id="@+id/death_number">
 
                         </TextView>
 
@@ -174,7 +174,7 @@
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_death_interval"
+                            android:id="@+id/death_interval"
                             />
 
                     </LinearLayout>
@@ -217,7 +217,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_sick_number">
+                            android:id="@+id/sick_number">
 
                         </TextView>
 
@@ -229,7 +229,7 @@
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_sick_interval"
+                            android:id="@+id/sick_interval"
                             />
 
                     </LinearLayout>
@@ -269,7 +269,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_recovered_number">
+                            android:id="@+id/recovered_number">
 
                         </TextView>
 
@@ -281,7 +281,7 @@
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
                             android:textColor="?attr/textColor"
-                            android:id="@+id/indonesia_recovered_interval"
+                            android:id="@+id/recovered_interval"
                             />
 
                     </LinearLayout>
