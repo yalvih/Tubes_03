@@ -68,7 +68,8 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/google_font_normal"
                     android:padding="10dp"
-                    android:textSize="25sp">
+                    android:textSize="25sp"
+                    android:textColor="?attr/textColor">
                 </TextView>
 
                 <LinearLayout
@@ -85,7 +86,8 @@
                         android:text="@string/terkonfirmasi"
                         android:textStyle="bold"
                         android:fontFamily="@font/google_font_normal"
-                        android:textSize="20sp">
+                        android:textSize="20sp"
+                        android:textColor="?attr/textColor">
                     </TextView>
 
                     <TextView
@@ -95,6 +97,7 @@
                         android:fontFamily="@font/google_font_normal"
                         android:text="@string/data_loading_placeholder"
                         android:textSize="20sp"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/indonesia_confirmed_number">
                     </TextView>
 
@@ -105,6 +108,7 @@
                         android:fontFamily="@font/google_font_normal"
                         android:text="@string/data_loading_placeholder"
                         android:textSize="16sp"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/indonesia_confirmed_interval">
                     </TextView>
 
@@ -142,6 +146,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/meninggal"
                             android:textStyle="bold"
+                            android:textColor="?attr/textColor"
                             >
 
                         </TextView>
@@ -152,6 +157,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_death_number">
 
                         </TextView>
@@ -163,6 +169,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_death_interval"
                             />
 
@@ -194,7 +201,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/dirawat"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -204,6 +212,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_sick_number">
 
                         </TextView>
@@ -215,6 +224,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_sick_interval"
                             />
 
@@ -243,7 +253,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/sembuh"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -253,6 +264,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_recovered_number">
 
                         </TextView>
@@ -264,6 +276,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             android:id="@+id/indonesia_recovered_interval"
                             />
 
@@ -314,7 +327,8 @@
                     android:padding="10dp"
                     android:text="@string/data_corona_dunia"
                     android:textStyle="bold"
-                    android:textSize="25sp"></TextView>
+                    android:textSize="25sp"
+                    android:textColor="?attr/textColor" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -330,7 +344,8 @@
                         android:fontFamily="@font/google_font_normal"
                         android:text="@string/terkonfirmasi"
                         android:textStyle="bold"
-                        android:textSize="20sp"></TextView>
+                        android:textSize="20sp"
+                        android:textColor="?attr/textColor"></TextView>
 
                     <TextView
                         android:id="@+id/worldwide_confirmed_number"
@@ -339,7 +354,8 @@
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="@font/google_font_normal"
                         android:text="@string/data_loading_placeholder"
-                        android:textSize="20sp"></TextView>
+                        android:textSize="20sp"
+                        android:textColor="?attr/textColor"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -348,6 +364,7 @@
                         android:fontFamily="@font/google_font_normal"
                         android:text="@string/data_loading_placeholder"
                         android:textSize="16sp"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/worldwide_confirmed_interval">
                     </TextView>
 
@@ -384,7 +401,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/meninggal"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -394,7 +412,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="@string/data_loading_placeholder">
+                            android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -406,6 +425,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             />
 
                     </LinearLayout>
@@ -436,7 +456,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/dirawat"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -446,7 +467,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="@string/data_loading_placeholder">
+                            android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -458,6 +480,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             />
 
                     </LinearLayout>
@@ -487,7 +510,8 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/sembuh"
-                            android:textStyle="bold">
+                            android:textStyle="bold"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -497,7 +521,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/google_font_normal"
-                            android:text="@string/data_loading_placeholder">
+                            android:text="@string/data_loading_placeholder"
+                            android:textColor="?attr/textColor">
 
                         </TextView>
 
@@ -509,6 +534,7 @@
                             android:fontFamily="@font/google_font_normal"
                             android:text="@string/data_loading_placeholder"
                             android:textSize="11sp"
+                            android:textColor="?attr/textColor"
                             />
 
                     </LinearLayout>

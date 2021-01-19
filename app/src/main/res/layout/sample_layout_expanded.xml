@@ -15,7 +15,7 @@
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:gravity="center_vertical"
-        android:textColor="@android:color/black"
+        android:textColor="?attr/textColor"
         tools:text="Expanded View"/>
 
     <TextView
@@ -27,13 +27,14 @@
         android:gravity="top"
         android:minHeight="48dp"
         android:paddingBottom="8dp"
-        tools:text="I'm an Expanded View"/>
+        tools:text="I'm an Expanded View"
+        android:textColor="?attr/textColor"/>
 
     <com.sysdata.widget.accordion.ArrowImageView
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentRight="true"
-        android:tint="@android:color/black"
+        android:tint="?attr/textColor"
         app:expanded="true"/>
 
 </RelativeLayout>

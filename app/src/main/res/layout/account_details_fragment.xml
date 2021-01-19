@@ -26,7 +26,8 @@
                 android:fontFamily="@font/google_font_normal"
                 android:paddingTop="55dp"
                 android:paddingBottom="55dp"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:textColor="?attr/textColor"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,7 +39,6 @@
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:paddingBottom="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -46,16 +46,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:hint="Insert Name Here"
+                        android:text="Insert Name Here"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
+                        android:textColor="?attr/textColor"
                         />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/google_font_normal"
+                        android:textSize="20sp">
+                    </TextView>
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:paddingBottom="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -63,12 +71,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:hint="Insert Status Here"
+                        android:text="Insert Status Here"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
+                        android:textColor="?attr/textColor"
                         />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/google_font_normal"
+                        android:textSize="20sp"/>
+
                 </LinearLayout>
+                <Button
+                    android:layout_width="400px"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text=""
+                    android:fontFamily="@font/google_font_normal"
+                    android:textSize="20sp">
+                </Button>
 
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -80,47 +104,33 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:text="Edit Your Account"
-                        android:textColor="@color/blue"
+                        android:text="Edit Your Name"
                         android:fontFamily="@font/google_font_normal"
-                        android:paddingBottom="100px"
+                        android:textSize="20sp"
+                        android:textColor="?attr/textColor">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp">
                     </TextView>
 
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/test_covid"
-                    android:layout_width="600px"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:layout_gravity="center"
-                    android:text="Test COVID-19"
-                    android:layout_marginTop="70px"
-                    android:backgroundTint="@color/green"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/google_font_normal"
-                    android:padding="30px"
-                    android:textSize="20sp">
-                </Button>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="250dp"
-                    android:layout_weight="1">
-                </View>
-
-                <Button
                     android:id="@+id/account_sign_out"
-                    android:layout_width="400px"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:layout_gravity="center"
                     android:text="Sign Out"
+                    android:layout_marginTop="70px"
                     android:backgroundTint="@color/red"
                     android:textColor="@color/white"
                     android:fontFamily="@font/google_font_normal"
-                    android:padding="30px"
                     android:textSize="20sp">
                 </Button>
 

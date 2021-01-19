@@ -105,6 +105,11 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         this.text_sick_interval_id.setText(intervalFormatter(sickInterval));
         this.text_recovered_interval_id.setText(intervalFormatter(recoveredInterval));
 
+        this.text_confirmed_interval_id.setTextColor(intervalColorPicker(confirmedInterval));
+        this.text_death_interval_id.setTextColor(intervalColorPicker(deathInterval));
+        this.text_sick_interval_id.setTextColor(intervalColorPicker(sickInterval));
+        this.text_recovered_interval_id.setTextColor(intervalColorPicker(recoveredInterval));
+
         setPieChartData(deathTotal, sickTotal, recoveredTotal);
     }
 
@@ -127,6 +132,23 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
             return "+" + thousandSeparatorFormat.format(interval);
         }
         else return thousandSeparatorFormat.format(interval);
+    }
+
+    public int intervalColorPicker(int interval) {
+        TypedValue valueIntervalColor = new TypedValue();
+
+        if (interval > 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorPositive, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else if (interval == 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNeutral, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
     }
 
     public void initializePieChart() {
