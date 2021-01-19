@@ -82,8 +82,8 @@ public class FAQFragment extends Fragment {
 
         // Adding child data
         listDataHeader.add("Apa Itu Coronavirus ?");
-        listDataHeader.add("Now Showing");
-        listDataHeader.add("Coming Soon..");
+        listDataHeader.add("Bagaimana Mencegah Virus Corona ?");
+        listDataHeader.add("Bagaimana Pengobatan Virus Corona ?");
 
         // Adding child data
         List<String> top250 = new ArrayList<String>();
@@ -92,19 +92,37 @@ public class FAQFragment extends Fragment {
                 "infeksi paru-paru yang berat, hingga kematian.");
 
         List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("The Conjuring");
-        nowShowing.add("Despicable Me 2");
-        nowShowing.add("Turbo");
-        nowShowing.add("Grown Ups 2");
-        nowShowing.add("Red 2");
-        nowShowing.add("The Wolverine");
+        nowShowing.add(" Saat ini, Indonesia sedang melakukan vaksinasi COVID-19 secara berkala ke masyarakat Indonesia. Meskipun vaksinasi sudah mulai di jalankan, cara pencegahan yang terbaik adalah dengan menghindari faktor-faktor yang bisa menyebabkan Anda terinfeksi virus ini, yaitu:\n" +
+                "\n" +
+                "Terapkan physical distancing, yaitu menjaga jarak minimal 1 meter dari orang lain, dan jangan dulu ke luar rumah kecuali ada keperluan mendesak.\n \n" +
+                "Gunakan masker saat beraktivitas di tempat umum atau keramaian, termasuk saat pergi berbelanja bahan makanan dan mengikuti ibadah di hari raya, misalnya Idul Adha.\n \n" +
+                "Rutin mencuci tangan dengan air dan sabun atau hand sanitizer yang mengandung alkohol minimal 60%, terutama setelah beraktivitas di luar rumah atau di tempat umum.\n \n" +
+                "Jangan menyentuh mata, mulut, dan hidung sebelum mencuci tangan.\n \n" +
+                "Tingkatkan daya tahan tubuh dengan pola hidup sehat, seperti mengonsumsi makanan bergizi, berolahraga secara rutin, beristirahat yang cukup, dan mencegah stres.\n \n" +
+                "Hindari kontak dengan penderita COVID-19, orang yang dicurigai positif terinfeksi virus Corona, atau orang yang sedang sakit demam, batuk, atau pilek.\n \n" +
+                "Tutup mulut dan hidung dengan tisu saat batuk atau bersin, kemudian buang tisu ke tempat sampah.\n \n" +
+                "Jaga kebersihan benda yang sering disentuh dan kebersihan lingkungan, termasuk kebersihan rumah.\n \n \n \n" +
+                "Untuk orang yang diduga terkena COVID-19 (termasuk kategori suspek dan probable) yang sebelumnya disebut sebagai ODP (orang dalam pemantauan) maupun PDP (pasien dalam pengawasan), ada beberapa langkah yang bisa dilakukan agar tidak menularkan virus Corona ke orang lain, yaitu:\n" +
+                "\n" +
+                "Lakukan isolasi mandiri dengan cara tinggal terpisah dari orang lain untuk sementara waktu. Bila tidak memungkinkan, gunakan kamar tidur dan kamar mandi yang berbeda dengan yang digunakan orang lain.\n \n" +
+                "Jangan keluar rumah, kecuali untuk mendapatkan pengobatan.\n \n" +
+                "Bila ingin ke rumah sakit saat gejala bertambah berat, sebaiknya hubungi dulu pihak rumah sakit untuk menjemput.\n \n" +
+                "Larang orang lain untuk mengunjungi atau menjenguk Anda sampai Anda benar-benar sembuh.\n \n" +
+                "Sebisa mungkin jangan melakukan pertemuan dengan orang yang sedang sedang sakit.\n \n" +
+                "Hindari berbagi penggunaan alat makan dan minum, alat mandi, serta perlengkapan tidur dengan orang lain.\n \n" +
+                "Pakai masker dan sarung tangan bila sedang berada di tempat umum atau sedang bersama orang lain.\n \n" +
+                "Gunakan tisu untuk menutup mulut dan hidung bila batuk atau bersin, lalu segera buang tisu ke tempat sampah.\n \n" +
+                "Kondisi-kondisi yang memerlukan penanganan langsung oleh dokter di rumah sakit, seperti melahirkan, operasi, cuci darah, atau vaksinasi anak, perlu ditangani secara berbeda dengan beberapa penyesuaian selama pandemi COVID-19. Tujuannya adalah untuk mencegah penularan virus Corona selama Anda berada di rumah sakit. Konsultasikan dengan dokter mengenai tindakan terbaik yang perlu dilakukan.");
 
         List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
+        comingSoon.add("Belum ada obat yang benar-benar efektif untuk mengatasi infeksi virus Corona atau COVID-19. Pilihan pengobatan akan disesuaikan dengan kondisi pasien dan tingkat keparahannya. Beberapa pasien dengan gejala ringan atau tanpa gejala akan di sarankan untuk melakukan protokol isolasi mandiri di rumah sambil tetap melakukan langkah pencegahan penyebaran infeksi virus Corona.\n" +
+                "\n" +
+                "Selain itu, dokter juga bisa memberikan beberapa beberapa langkah untuk meredakan gejalanya dan mencegah penyebaran virus corona, yaitu:\n" +
+                "\n" +
+                "Merujuk penderita COVID-19 yang berat untuk menjalani perawatan dan karatina di rumah sakit rujukan\n" +
+                "Memberikan obat pereda demam dan nyeri yang aman dan sesuai kondisi penderita\n" +
+                "Menganjurkan penderita COVID-19 untuk melakukan isolasi mandiri dan istirahat yang cukup\n" +
+                "Menganjurkan penderita COVID-19 untuk banyak minum air putih untuk menjaga kadar cairan tubuh");
 
         listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
         listDataChild.put(listDataHeader.get(1), nowShowing);
