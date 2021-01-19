@@ -43,7 +43,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
     private TextView text_confirmed_total_id, text_death_total_id, text_sick_total_id, text_recovered_total_id,
             text_confirmed_interval_id, text_death_interval_id, text_sick_interval_id, text_recovered_interval_id;
     private PieChart dataChart;
-    private TypedValue textColor;
+    private TypedValue valueTextColor;
     DecimalFormat thousandSeparatorFormat = new DecimalFormat("###,###,###,###");
 
     public static DataDetailsFragment newInstance(String title) {
@@ -59,8 +59,8 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         View view = inflater.inflate(R.layout.data_details_fragment, container, false);
         this.presenter = new DataDetailsPresenter(this);
 
-        this.textColor = new TypedValue();
-        getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, this.textColor, true);
+        this.valueTextColor = new TypedValue();
+        getContext().getTheme().resolveAttribute(R.attr.textColor, this.valueTextColor, true);
 
         this.text_confirmed_total_id = view.findViewById(R.id.indonesia_confirmed_number);
         this.text_confirmed_interval_id = view.findViewById(R.id.indonesia_confirmed_interval);
@@ -136,7 +136,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         this.dataChart.setCenterText("Jumlah Kasus");
         this.dataChart.setCenterTextTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
         this.dataChart.setCenterTextSize(25f);
-        this.dataChart.setCenterTextColor(textColor.data);
+        this.dataChart.setCenterTextColor(valueTextColor.data);
         this.dataChart.setNoDataTextTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
 
         this.dataChart.setHoleColor(Color.parseColor("#00000000"));
@@ -164,13 +164,9 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         }
 
         PieDataSet chartDataSet = new PieDataSet(chartEntries, label);
-        //setting text size of the value
         chartDataSet.setValueTextSize(15f);
-        //providing color list for coloring different entries
         chartDataSet.setColors(colors);
-        //grouping the data set from entry to chart
         PieData chartData = new PieData(chartDataSet);
-        //showing the value of the entries, default true if not set
         chartData.setDrawValues(true);
 
         dataChart.setData(chartData);
@@ -182,7 +178,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         legends.setTypeface(ResourcesCompat.getFont(this.getContext(), R.font.google_font_normal));
         legends.setTextSize(13f);
 
-        legends.setTextColor(textColor.data);
+        legends.setTextColor(valueTextColor.data);
         legends.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legends.setFormSize(13f);
         legends.setXEntrySpace(13f);

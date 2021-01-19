@@ -45,9 +45,9 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
 
         this.darkTheme = this.sp.getInt("DARK_THEME", 0);
         if (this.darkTheme == 1) {
-            this.changeTheme.setText("DARK");
+            this.changeTheme.setText("LIGHT");
         }
-        else this.changeTheme.setText("LIGHT");
+        else this.changeTheme.setText("DARK");
 
         this.changeTheme.setOnClickListener(this);
         this.tnc.setOnClickListener(this);
