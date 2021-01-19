@@ -22,18 +22,18 @@ public class Utils {
     }
 
     public static void setThemeOnCreate(AppCompatActivity activity) {
-//        if (themeCode == THEME_UNSET) {
-//            activity.setTheme(R.style.AppTheme);
-//        }
-//        else if (themeCode == THEME_LIGHT) {
-//            activity.setTheme(R.style.AppTheme);
-//        }
-//        else if (themeCode == THEME_DARK) {
-//            activity.setTheme(R.style.AppThemeDark);
-//        }
-//        else {
-//            Log.d("Debug", "Theme Error!");
-//            activity.setTheme(R.style.AppTheme);
-//        }
+        if (themeCode == THEME_UNSET) {
+            activity.setTheme(R.style.AppTheme);
+        }
+        else if (themeCode == THEME_LIGHT) {
+            activity.setTheme(R.style.AppTheme);
+        }
+        else if (themeCode == THEME_DARK) {
+            activity.setTheme(R.style.AppThemeDark);
+        }
+        else {
+            Log.d("Debug", "Theme Error!");
+            activity.setTheme(R.style.AppTheme);
+        }
     }
 }

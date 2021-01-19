@@ -44,10 +44,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         this.changeTheme = view.findViewById(R.id.change_theme);
 
         this.darkTheme = this.sp.getInt("DARK_THEME", 0);
-        if (this.darkTheme == 2) {
-            this.changeTheme.setText("ENABLE");
+        if (this.darkTheme == 1) {
+            this.changeTheme.setText("DARK");
         }
-        else this.changeTheme.setText("DISABLE");
+        else this.changeTheme.setText("LIGHT");
 
         this.changeTheme.setOnClickListener(this);
         this.tnc.setOnClickListener(this);
@@ -72,13 +72,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             this.fragmentListener.changePage(9);
         }
         if (v == this.changeTheme) {
-            if (this.darkTheme == 2) {
-                this.spEditor.putInt("DARK_THEME", 1);
+            if (this.darkTheme == 1) {
+                this.spEditor.putInt("DARK_THEME", 2);
                 spEditor.apply();
-                fragmentListener.changeTheme(1);
+                fragmentListener.changeTheme(2);
             }
             else {
-                this.spEditor.putInt("DARK_THEME", 2);
+                this.spEditor.putInt("DARK_THEME", 1);
                 spEditor.apply();
                 fragmentListener.changeTheme(2);
             }
