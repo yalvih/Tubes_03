@@ -22,6 +22,7 @@
             android:layout_gravity="center"
             android:text="@string/settings"
             android:textSize="25sp"
+            android:textColor="?attr/textColor"
             android:paddingBottom="75dp"
             android:fontFamily="@font/google_font_normal"
             />
@@ -40,6 +41,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="Change Theme"
+                android:textColor="?attr/textColor"
                 android:textSize="18sp"
                 android:fontFamily="@font/google_font_normal"
                 />
@@ -73,6 +75,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="@string/manual"
+                android:textColor="?attr/textColor"
                 android:textSize="18sp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"

@@ -5,6 +5,9 @@
     <attr name="colorAccent" format="color"/>
     <attr name="fragmentBackground" format="color"/>
     <attr name="textColor" format="color"/>
+    <attr name="intervalColorPositive" format="color"/>
+    <attr name="intervalColorNeutral" format="color"/>
+    <attr name="intervalColorNegative" format="color"/>
     <attr name="rippleEffectTheme" format="color"/>
     <attr name="rippleEffect" format="color"/>
 </resources>

@@ -22,6 +22,7 @@ public class HomePresenter {
         void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
         void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
         String intervalFormatter(int interval);
+        int intervalColorPicker(int interval);
     }
 
     public void loadData() {

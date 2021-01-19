@@ -23,7 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_article_24"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:textColor="?attr/textColor">
 
             </ImageView>
 
@@ -42,6 +43,7 @@
                     android:textStyle="bold"
                     android:paddingBottom="5dp"
                     android:textSize="18sp"
+                    android:textColor="?attr/textColor"
                     android:layout_weight="1"/>
 
                 <TextView
@@ -50,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/google_font_normal"
                     android:textSize="14sp"
+                    android:textColor="?attr/textColor"
                     android:paddingBottom="5dp"
                     android:hint="01-01-1970"/>
 
@@ -59,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/google_font_normal"
                     android:textSize="16sp"
+                    android:textColor="?attr/textColor"
                     android:hint="News Description"/>
 
             </LinearLayout>

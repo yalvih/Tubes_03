@@ -21,6 +21,8 @@ public class DataDetailsPresenter {
         Context getFragmentContext();
         void updateTextViewsIndonesia(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
 //        void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
+        String intervalFormatter(int interval);
+        int intervalColorPicker(int interval);
         void initializePieChart();
         void setPieChartData(int death, int sick, int recovered);
         void setPieChartSettings();

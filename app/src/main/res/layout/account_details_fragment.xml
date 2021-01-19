@@ -26,7 +26,8 @@
                 android:fontFamily="@font/google_font_normal"
                 android:paddingTop="55dp"
                 android:paddingBottom="55dp"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:textColor="?attr/textColor"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,6 +49,7 @@
                         android:text="Insert Name Here"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
+                        android:textColor="?attr/textColor"
                         />
 
                     <TextView
@@ -72,6 +74,7 @@
                         android:text="Insert Status Here"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
+                        android:textColor="?attr/textColor"
                         />
 
                     <TextView
@@ -103,7 +106,8 @@
                         android:textAlignment="center"
                         android:text="Edit Your Name"
                         android:fontFamily="@font/google_font_normal"
-                        android:textSize="20sp">
+                        android:textSize="20sp"
+                        android:textColor="?attr/textColor">
                     </TextView>
 
                     <TextView
