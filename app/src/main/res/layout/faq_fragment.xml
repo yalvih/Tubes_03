@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -22,18 +22,10 @@
             android:fontFamily="@font/google_font_normal"
             />
 
-        <SearchView
-            android:id="@+id/search_faq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </SearchView>
-
-        <ListView
-            android:id="@+id/list_faq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </ListView>
+        <ExpandableListView
+            android:id="@+id/lvExp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
 
     </LinearLayout>
 

@@ -11,4 +11,6 @@
     <color name="red">#FFE3350E</color>
     <color name="yellow">#FFD9BE11</color>
     <color name="green">#FF1AA13E</color>
+    <color name="fragment_bg_light">#FFFFFF</color>
+    <color name="fragment_bg_dark">#FF000000</color>
 </resources>

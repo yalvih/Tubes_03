@@ -4,6 +4,7 @@
     <attr name="colorPrimaryDark" format="color"/>
     <attr name="colorAccent" format="color"/>
     <attr name="fragmentBackground" format="color"/>
+    <attr name="textColor" format="color"/>
     <attr name="rippleEffectTheme" format="color"/>
     <attr name="rippleEffect" format="color"/>
 </resources>

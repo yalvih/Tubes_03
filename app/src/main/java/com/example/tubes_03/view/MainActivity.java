@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 
 import com.example.tubes_03.R;
+import com.example.tubes_03.Utils;
 import com.example.tubes_03.databinding.ActivityMainBinding;
 import com.example.tubes_03.model.News;
 import com.example.tubes_03.presenter.NewsPresenter;
@@ -47,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private MockNewsAdapter adapter;
     private NewsPresenter.INewsFragment InewsFragment;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         sp = this.getPreferences(MODE_PRIVATE);
         spEditor = sp.edit();
 
+        new Utils(this.sp.getInt("DARK_THEME", 0));
+        Utils.setThemeOnCreate(this);
 
 //        this.presenter = new MainActivityPresenter(this);
 
@@ -75,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.settingsFragment = SettingsFragment.newInstance("COVID Stats");
         this.signUpFragment = SignUpFragment.newInstance("COVID Stats");
         this.termsAndConditionsFragment = TermsAndConditionsFragment.newInstance("COVID Stats");
-
-
 
         ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.addDrawerListener(abdt);
@@ -139,6 +138,19 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.moveTaskToBack(true);
         this.finish();
         this.drawer.closeDrawers();
+    }
+
+    @Override
+    public void changeTheme(int theme) {
+        if (theme == 1) {
+            Utils.changeToTheme(this, Utils.THEME_LIGHT);
+        }
+        else if (theme == 2) {
+            Utils.changeToTheme(this, Utils.THEME_DARK);
+        }
+        else {
+            Utils.changeToTheme(this, Utils.THEME_UNSET);
+        }
     }
 
 }

@@ -81,14 +81,14 @@
                         android:textSize="20sp"/>
 
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
+                <Button
+                    android:layout_width="400px"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:text=""
                     android:fontFamily="@font/google_font_normal"
                     android:textSize="20sp">
-                </TextView>
+                </Button>
 
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -115,16 +115,19 @@
 
                 </LinearLayout>
 
-                <TextView
+                <Button
                     android:id="@+id/account_sign_out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:layout_gravity="center"
                     android:text="Sign Out"
-                    android:textColor="@color/red"
+                    android:layout_marginTop="70px"
+                    android:backgroundTint="@color/red"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/google_font_normal"
                     android:textSize="20sp">
-                </TextView>
+                </Button>
 
 
 
