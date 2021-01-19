@@ -2,12 +2,15 @@ package com.example.tubes_03.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -23,6 +26,7 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
     private FragmentListener fragmentListener;
     private AccountPresenter presenter;
     private TextView username, status, editName, signout;
+    Button test_covid;
 
     public static AccountFragment newInstance(String title) {
         AccountFragment fragment = new AccountFragment();
@@ -46,6 +50,17 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
         this.signout = view.findViewById(R.id.account_sign_out);
 
         this.signout.setOnClickListener(this);
+
+        Button button = view.findViewById(R.id.test_covid);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse("https://tesmasif.pikobar.jabarprov.go.id/"));
+                startActivity(viewIntent);
+            }
+        });
 
         return view;
     }
