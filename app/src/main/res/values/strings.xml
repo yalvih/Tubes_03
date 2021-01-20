@@ -51,11 +51,15 @@ In pellentesque est ut tellus interdum accumsan. Donec dignissim leo sed ipsum m
     <string name="data_indonesia">Indonesia</string>
     <string name="data_world">Dunia</string>
     <string name="change_theme">Change Theme</string>
-    <string name="status">Status :</string>
+    <string name="status">Status : </string>
     <string name="insert_name_here">Insert Name Here</string>
     <string name="my_account">My Account</string>
-    <string name="nama">Nama :</string>
+    <string name="nama">Nama : </string>
     <string name="insert_status_here">Insert Status Here</string>
     <string name="daftar_test_covid_19">Daftar Test Covid-19</string>
     <string name="sign_out">Sign Out</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="edit_account">Edit Account</string>
+    <string name="no_status">No Status</string>
+    <string name="no_name">No Name</string>
 </resources>
