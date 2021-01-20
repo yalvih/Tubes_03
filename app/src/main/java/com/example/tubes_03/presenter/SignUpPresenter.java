@@ -55,6 +55,8 @@ public class SignUpPresenter {
                     user.setPassword(password);
                     user.save();
 
+                    this.spEditor.putString("USER_USERNAME", user.getUsername());
+                    this.spEditor.putInt("USER_STATUS", user.getSwabTestStatus());
                     this.spEditor.putBoolean("USER_LOGGED_IN", true);
                     this.spEditor.putBoolean("USER_JUST_LOGGED_IN", true);
                     spEditor.apply();

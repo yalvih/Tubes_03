@@ -26,7 +26,7 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
     SharedPreferences.Editor spEditor;
     private FragmentListener fragmentListener;
     private AccountPresenter presenter;
-    private TextView username, status, editName, signout;
+    private TextView username, status, deleteAccount, signout;
     Button test_covid;
 
     public static AccountFragment newInstance(String title) {
@@ -46,11 +46,12 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
 
         this.username = view.findViewById(R.id.account_username);
         this.status = view.findViewById(R.id.account_status);
-//        this.editName = view.findViewById(R.id.account_edit_name);
         this.signout = view.findViewById(R.id.account_sign_out);
+        this.deleteAccount = view.findViewById(R.id.delete_account);
         this.test_covid = view.findViewById(R.id.test_covid);
 
         this.signout.setOnClickListener(this);
+        this.deleteAccount.setOnClickListener(this);
         this.test_covid.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent viewIntent =
@@ -81,6 +82,9 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
         if (v == this.signout) {
             this.presenter.logout();
         }
+        else if (v == this.deleteAccount) {
+            this.presenter.deleteAccount();
+        }
     }
 
     public Activity getFragmentActivity() {
@@ -95,10 +99,12 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
         if (swabStatus == 1) {
             getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueSwabTestColorCode, true);
             this.status.setText("Negatif");
+            this.status.setTextColor(valueSwabTestColorCode.data);
         }
         else if (swabStatus == 2) {
             getContext().getTheme().resolveAttribute(R.attr.intervalColorPositive, valueSwabTestColorCode, true);
             this.status.setText("Positif");
+            this.status.setTextColor(valueSwabTestColorCode.data);
         }
         else this.status.setText("Tidak ada data tes.");
     }

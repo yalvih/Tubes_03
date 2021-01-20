@@ -38,17 +38,18 @@
 
                 <LinearLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="200px"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
                         android:text="@string/nama"
+                        android:gravity="end"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
                         android:paddingTop="40dp"
+                        android:paddingEnd="16dp"
                         android:textColor="?attr/textColor"
                         />
 
@@ -56,7 +57,6 @@
                         android:id="@+id/account_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
                         android:hint="@string/no_name"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
@@ -67,17 +67,18 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="200px"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
                         android:text="@string/status"
+                        android:gravity="end"
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
                         android:paddingTop="40dp"
+                        android:paddingEnd="16dp"
                         android:textColor="?attr/textColor"
                         />
 
@@ -85,7 +86,6 @@
                         android:id="@+id/account_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
                         android:paddingTop="40dp"
                         android:hint="@string/no_status"
                         android:fontFamily="@font/google_font_normal"
@@ -97,7 +97,7 @@
 
                 <LinearLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:orientation="horizontal">
 
                     <TextView
