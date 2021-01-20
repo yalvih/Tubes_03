@@ -15,10 +15,8 @@ import com.example.tubes_03.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
-//implements SettingsPresenter.ISettingFragment,
 public class SettingsFragment extends Fragment implements View.OnClickListener {
     private FragmentListener fragmentListener;
-//    private SettingsPresenter presenter;
     TextView tnc;
     Button changeTheme;
     SharedPreferences sp;

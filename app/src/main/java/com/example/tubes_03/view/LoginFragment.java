@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-import com.example.tubes_03.model.Users;
-import com.example.tubes_03.model.Users_Table;
-import com.example.tubes_03.presenter.FAQPresenter;
 import com.example.tubes_03.presenter.LoginPresenter;
-import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import static android.content.Context.MODE_PRIVATE;
 

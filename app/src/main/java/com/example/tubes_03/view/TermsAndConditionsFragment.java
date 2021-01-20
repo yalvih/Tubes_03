@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes_03.R;
-import com.example.tubes_03.presenter.TermsAndConditionsPresenter;
 
-//implements TermsAndConditionsPresenter.ITermsAndConditionsFragment
 public class TermsAndConditionsFragment extends Fragment {
     private FragmentListener fragmentListener;
-//    private TermsAndConditionsPresenter presenter;
 
     public static TermsAndConditionsFragment newInstance(String title) {
         TermsAndConditionsFragment fragment = new TermsAndConditionsFragment();
@@ -27,7 +24,6 @@ public class TermsAndConditionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.term_and_condition_fragment, container, false);
-//        this.presenter = new TermsAndConditionsPresenter(this);
 
         return view;
     }

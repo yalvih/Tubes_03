@@ -18,14 +18,12 @@ import com.example.tubes_03.Utils;
 import com.example.tubes_03.databinding.ActivityMainBinding;
 import com.example.tubes_03.presenter.NewsPresenter;
 
-// implements MainActivityPresenter.IMainActivity,
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     protected final int CALLER_FRAGMENT_HOME = 0;
     protected final int CALLER_FRAGMENT_DETAILS_IDN = 1;
     protected final int CALLER_FRAGMENT_DETAILS_WORLD = 2;
-//    private MainActivityPresenter presenter;
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FragmentManager fragmentManager;
@@ -54,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         new Utils(this.sp.getInt("DARK_THEME", 0));
         Utils.setThemeOnCreate(this);
-
-//        this.presenter = new MainActivityPresenter(this);
 
 //        this.setSupportActionBar(this.bind.toolbar);
 

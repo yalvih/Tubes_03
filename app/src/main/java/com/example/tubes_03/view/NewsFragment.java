@@ -16,8 +16,7 @@ import com.example.tubes_03.presenter.NewsPresenter;
 
 import java.util.List;
 
-//implements NewsPresenter.INewsFragment
-public class NewsFragment extends Fragment implements NewsPresenter.INewsFragment{
+public class NewsFragment extends Fragment implements NewsPresenter.INewsFragment {
     ListView lstNews;
     private NewsPresenter present;
     private MockNewsAdapter adapter;
