@@ -50,4 +50,5 @@ In pellentesque est ut tellus interdum accumsan. Donec dignissim leo sed ipsum m
     <string name="logsign_user_exists">Username sudah terpakai. Silahkan coba username lain.</string>
     <string name="data_indonesia">Indonesia</string>
     <string name="data_world">Dunia</string>
+    <string name="change_theme">Change Theme</string>
 </resources>
