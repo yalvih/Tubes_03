@@ -109,6 +109,8 @@
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
                         android:paddingTop="40dp"
+                        android:setFocusable="true"
+                        android:setClickable="true"
                         android:textColor="@color/blue"
                         />
 
@@ -128,6 +130,8 @@
                         android:fontFamily="@font/google_font_normal"
                         android:textSize="20sp"
                         android:paddingTop="40dp"
+                        android:setFocusable="true"
+                        android:setClickable="true"
                         android:textColor="@color/red"
                         />
 
