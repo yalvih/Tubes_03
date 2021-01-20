@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
         this.text_confirmed_interval_id.setTextColor(intervalColorPicker(confirmedInterval));
         this.text_death_interval_id.setTextColor(intervalColorPicker(deathInterval));
         this.text_sick_interval_id.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval_id.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_recovered_interval_id.setTextColor(intervalRecoveredColorPicker(recoveredInterval));
     }
 
     public void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval) {
@@ -132,7 +132,7 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
         this.text_confirmed_interval_ww.setTextColor(intervalColorPicker(confirmedInterval));
         this.text_death_interval_ww.setTextColor(intervalColorPicker(deathInterval));
         this.text_sick_interval_ww.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval_ww.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_recovered_interval_ww.setTextColor(intervalRecoveredColorPicker(recoveredInterval));
     }
 
     public String intervalFormatter(int interval) {
@@ -155,6 +155,23 @@ public class HomeFragment extends Fragment implements HomePresenter.IHomeFragmen
         }
         else {
             getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+    }
+
+    public int intervalRecoveredColorPicker(int interval) {
+        TypedValue valueIntervalColor = new TypedValue();
+
+        if (interval > 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else if (interval == 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNeutral, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorPositive, valueIntervalColor, true);
             return valueIntervalColor.data;
         }
     }

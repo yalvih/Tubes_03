@@ -24,6 +24,7 @@ public class DataDetailsPresenter {
         void updateTextViewsWorldwide(int confirmedTotal, int confirmedInterval, int deathTotal, int deathInterval, int sickTotal, int sickInterval, int recoveredTotal, int recoveredInterval);
         String intervalFormatter(int interval);
         int intervalColorPicker(int interval);
+        int intervalRecoveredColorPicker(int interval);
         void dataModeSetUnpicked(TextView dataPicker);
         void initializePieChart();
         void setPieChartData(int death, int sick, int recovered);

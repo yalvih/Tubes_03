@@ -143,7 +143,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         this.text_confirmed_interval.setTextColor(intervalColorPicker(confirmedInterval));
         this.text_death_interval.setTextColor(intervalColorPicker(deathInterval));
         this.text_sick_interval.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_recovered_interval.setTextColor(intervalRecoveredColorPicker(recoveredInterval));
 
         setPieChartData(deathTotal, sickTotal, recoveredTotal);
     }
@@ -162,7 +162,7 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         this.text_confirmed_interval.setTextColor(intervalColorPicker(confirmedInterval));
         this.text_death_interval.setTextColor(intervalColorPicker(deathInterval));
         this.text_sick_interval.setTextColor(intervalColorPicker(sickInterval));
-        this.text_recovered_interval.setTextColor(intervalColorPicker(recoveredInterval));
+        this.text_recovered_interval.setTextColor(intervalRecoveredColorPicker(recoveredInterval));
 
         setPieChartData(deathTotal, sickTotal, recoveredTotal);
     }
@@ -187,6 +187,23 @@ public class DataDetailsFragment extends Fragment implements DataDetailsPresente
         }
         else {
             getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+    }
+
+    public int intervalRecoveredColorPicker(int interval) {
+        TypedValue valueIntervalColor = new TypedValue();
+
+        if (interval > 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else if (interval == 0) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNeutral, valueIntervalColor, true);
+            return valueIntervalColor.data;
+        }
+        else {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorPositive, valueIntervalColor, true);
             return valueIntervalColor.data;
         }
     }

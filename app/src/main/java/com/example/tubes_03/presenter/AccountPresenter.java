@@ -20,6 +20,7 @@ public class AccountPresenter {
 
     public interface IAccountFragment {
         Activity getFragmentActivity();
+        void deployUserDatas();
     }
 
     public void logout() {

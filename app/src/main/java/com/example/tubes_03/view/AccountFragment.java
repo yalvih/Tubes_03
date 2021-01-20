@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,18 +42,15 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
         View view = inflater.inflate(R.layout.account_details_fragment, container, false);
         sp = this.getActivity().getPreferences(MODE_PRIVATE);
         spEditor = sp.edit();
-        Log.d("aeugh", Boolean.toString(sp.getBoolean("USER_LOGGED_IN", false)));
         this.presenter = new AccountPresenter(this);
 
         this.username = view.findViewById(R.id.account_username);
         this.status = view.findViewById(R.id.account_status);
 //        this.editName = view.findViewById(R.id.account_edit_name);
         this.signout = view.findViewById(R.id.account_sign_out);
-
-        this.signout.setOnClickListener(this);
-
         this.test_covid = view.findViewById(R.id.test_covid);
 
+        this.signout.setOnClickListener(this);
         this.test_covid.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent viewIntent =
@@ -61,6 +59,8 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
                 startActivity(viewIntent);
             }
         });
+
+        deployUserDatas();
 
         return view;
     }
@@ -85,5 +85,21 @@ public class AccountFragment extends Fragment implements AccountPresenter.IAccou
 
     public Activity getFragmentActivity() {
         return this.getActivity();
+    }
+
+    public void deployUserDatas() {
+        TypedValue valueSwabTestColorCode = new TypedValue();
+        this.username.setText(this.sp.getString("USER_USERNAME", ""));
+
+        int swabStatus = this.sp.getInt("USER_STATUS", 0);
+        if (swabStatus == 1) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorNegative, valueSwabTestColorCode, true);
+            this.status.setText("Negatif");
+        }
+        else if (swabStatus == 2) {
+            getContext().getTheme().resolveAttribute(R.attr.intervalColorPositive, valueSwabTestColorCode, true);
+            this.status.setText("Positif");
+        }
+        else this.status.setText("Tidak ada data tes.");
     }
 }
